@@ -1,0 +1,1 @@
+/usr/bin/mpic++    -rdynamic CMakeFiles/MpiHelloWorld.dir/main.cpp.o  -o bin/MpiHelloWorld 

@@ -1,0 +1,3 @@
+/home/01-mpi/02-ping-pong/CMakeFiles/rebuild_cache.dir
+/home/01-mpi/02-ping-pong/CMakeFiles/MpiPingPong.dir
+/home/01-mpi/02-ping-pong/CMakeFiles/edit_cache.dir

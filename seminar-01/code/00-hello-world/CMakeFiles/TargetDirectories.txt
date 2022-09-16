@@ -1,0 +1,3 @@
+/home/01-mpi/00-hello-world/CMakeFiles/rebuild_cache.dir
+/home/01-mpi/00-hello-world/CMakeFiles/MpiHelloWorld.dir
+/home/01-mpi/00-hello-world/CMakeFiles/edit_cache.dir
