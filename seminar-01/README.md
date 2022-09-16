@@ -58,23 +58,23 @@ int main(int argc, char *argv[]) {
 #include <iostream>
 
 int main(int argc, char** argv) {
-	MPI_Init(&argc, &argv);
+    MPI_Init(&argc, &argv);
 
-	int procid, num_procs;
-	MPI_Comm_rank(MPI_COMM_WORLD, &procid);
+    int procid, num_procs;
+    MPI_Comm_rank(MPI_COMM_WORLD, &procid);
     MPI_Comm_size(MPI_COMM_WORLD, &num_procs);
     
     int world_size;
-	MPI_Comm_size(MPI_COMM_WORLD, &world_size);
+    MPI_Comm_size(MPI_COMM_WORLD, &world_size);
 
-	char processor_name[MPI_MAX_PROCESSOR_NAME];
+    char processor_name[MPI_MAX_PROCESSOR_NAME];
     int name_length;
     MPI_Get_processor_name(processor_name, &name_length);
 
-	std::cout << "Hello, world! My id is " << procid << " and my processor name is " << processor_name << " out of " << world_size << std::endl;
+    std::cout << "Hello, world! My id is " << procid << " and my processor name is " << processor_name << " out of " << world_size << std::endl;
 	
-	MPI_Finalize();
-	return 0;
+    MPI_Finalize();
+    return 0;
 }
 ```
 
@@ -161,7 +161,7 @@ docker exec -t "${CONTAINER_NAME}" apt-get install -y \
   openmpi-common openmpi-bin libopenmpi-dev openssh-client openssh-server net-tools netcat iptables
 ```
 
-Запускаем `{bash run_docker.sh}`, поднимается контейнер:
+Запускаем `bash run_docker.sh`, поднимается контейнер:
 
 <img width="1382" alt="image" src="https://user-images.githubusercontent.com/36137274/190561579-356e8c4f-9662-423e-bb4b-7377556b608d.png">
 
