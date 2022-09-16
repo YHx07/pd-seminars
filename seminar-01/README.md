@@ -142,6 +142,17 @@ docker exec -t "${CONTAINER_NAME}" apt-get install -y \
 
 `docker exec -it pd-mpi /bin/bash`
 
+#### Запуск программ
+
+1. `mpic++ main.cpp `
+2. `mpiexec -np 4 --allow-run-as-root ./a.out`
+
+#### Запуск программ с make
+
+1. `cmake . `
+2. `make -j9`
+3. `mpiexec -n 4 --allow-run-as-root bin/..
+
 
 ### Полезные ссылки:
 * [Mануал OpenMPI 4.0](https://www.open-mpi.org/doc/current/)
