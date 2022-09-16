@@ -1,3 +1,0 @@
-/home/01-mpi/04-isend-irecv/CMakeFiles/rebuild_cache.dir
-/home/01-mpi/04-isend-irecv/CMakeFiles/MpiIsendRecv.dir
-/home/01-mpi/04-isend-irecv/CMakeFiles/edit_cache.dir

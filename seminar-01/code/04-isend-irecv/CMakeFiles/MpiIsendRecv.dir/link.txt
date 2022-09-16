@@ -1,1 +1,0 @@
-/usr/bin/mpic++    -rdynamic CMakeFiles/MpiIsendRecv.dir/main.cpp.o  -o bin/MpiIsendRecv 
