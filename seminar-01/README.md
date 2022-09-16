@@ -119,7 +119,7 @@ mpiexec ./a.out
 sbatch ./run_sbatch_config.sh
 ```
 
-Локальный запуск программ через Docker:
+### Локальный запуск программ через Docker:
 
 Создаём файл run_docker.sh:
 ```
