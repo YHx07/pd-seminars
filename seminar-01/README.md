@@ -178,8 +178,11 @@ docker exec -t "${CONTAINER_NAME}" apt-get install -y \
 
 1. `cmake . `
 2. `make -j9`
-3. `mpiexec -n 4 --allow-run-as-root bin/..
+3. `mpiexec -n 4 --allow-run-as-root bin/..`
 
+
+#### Репозиторий с кодом:
+https://github.com/akhtyamovpavel/ParallelComputationExamples/tree/master/MPI
 
 ### Полезные ссылки:
 * [Mануал OpenMPI 4.0](https://www.open-mpi.org/doc/current/)
