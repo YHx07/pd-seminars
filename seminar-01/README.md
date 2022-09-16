@@ -1,5 +1,28 @@
 # Seminar 1 
 
+### Параллельные и распределенные вычислительные системы
+
+__Параллельные__:
+* многократное ускорение
+* высокопроизводительные машины
+* *отказоустойчивости нет
+* с точки зрения разработчика -- набор взаимодействующих процессов
+
+__Распределенные__:
+* большие объёмы данных
+* обычные машины
+* отказоустойчивость
+* с точки зрения разработчика -- одно распределенное вычислительное устройство
+
+### MPI программа на С/С++
+
+Реализация MPI-функций лежит в заголовочном файле ```mpi.h```.
+Зона параллельной части программы находится между вызовами функций ```MPI_Init``` и ```MPI_Finalize```.
+Чтобы получить количество процессов, используется ```MPI_Comm_size```. Определить id процесса среди N запущенных 
+можно через ```MPI_Comm_rank```.
+
+![MPI Reference](pic/mpi_reference.png)
+
 Пример программы, выполняющей "Hello, World!" на каждом процессе и считающей количество процессов:
 
 ```
@@ -26,14 +49,12 @@ int main(int argc, char *argv[]) {
     MPI_Finalize();
     return 0;
 }
- }
 ```
 
 Локальный запуск программ через Docker:
 
 Создаём файл run_docker.sh:
 ```
-{
 CONTAINER_NAME=pd-mpi
 
 docker run -d -e TZ=Europe/Moscow -e OMPI_ALLOW_RUN_AS_ROOT=1 -e OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1 \
@@ -43,7 +64,6 @@ docker exec -t "${CONTAINER_NAME}" apt upgrade -y
 docker exec -t "${CONTAINER_NAME}" apt-get install -y \
   build-essential make vim g++ sudo libomp-dev cmake libopenmpi-dev \
   openmpi-common openmpi-bin libopenmpi-dev openssh-client openssh-server net-tools netcat iptables
- }
 ```
 
 Запускаем `{bash run_docker.sh}`, поднимается контейнер:
@@ -52,4 +72,4 @@ docker exec -t "${CONTAINER_NAME}" apt-get install -y \
 
 Подключаемся к контейнеру командой:
 
-`{ docker exec -it pd-mpi /bin/bash }`
+`docker exec -it pd-mpi /bin/bash`
