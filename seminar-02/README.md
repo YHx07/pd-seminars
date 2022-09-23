@@ -156,7 +156,7 @@ MPI_Recv(
 
 #### Запуск программы:
 
-1. ```gcc -fopenmp main.c```
+1. ```gcc -fopenmp main.c``` / ```g++ -fopenmp main.c```
 2. ```./a.out```
 
 #### Запуск программы через cmake:
