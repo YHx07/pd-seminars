@@ -1,5 +1,7 @@
 # Seminar 2
 
+# MPI
+
 ### Запуск программа на кластере
 
 Вход на кластер
@@ -107,7 +109,7 @@ MPI_Recv(
 
 [Можно ещё раз пересмотреть в другом источнике](https://gitlab.com/fpmi-atp/pd2022s-supplementary/chernetskiy/-/blob/main/Seminar_1_MPI.md)
 
-### Введение в OpenMP
+# OpenMP
 
 Хедер: ```#include<omp.h>```.
 
