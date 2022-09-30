@@ -1,5 +1,7 @@
 # Seminar 3
 
+Все программы по CUDA лежат тут: https://github.com/akhtyamovpavel/ParallelComputationExamples/tree/master/CUDA
+
 # CUDA
 
 CUDA -- Compute Unified Device Architecture. Мы будет использовать CUDA Toolkit для ускорения вычислений программ, написанных на C++, на видеокартах Nvidia. Инструкция на [официальном сайте Nvidia](https://developer.nvidia.com/how-to-cuda-c-cpp).
