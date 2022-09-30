@@ -36,7 +36,7 @@ NVIDIA System Management Interface -- отображение информаци�
 
 ### Первые шаги на кластере:
 
-1. [Создать](https://www.ssh.com/academy/ssh/keygen) себе ssh ключ,
+1. [Создать](https://www.ssh.com/academy/ssh/keygen) себе ssh ключ (ssh-keygen),
 2. Добавить .ssh/id_rsa.pub к себе на гитхаб в ключи: https://github.com/settings/keys
 3. git clone https://github.com/akhtyamovpavel/ParallelComputationExamples
 
