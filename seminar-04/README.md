@@ -1,4 +1,4 @@
-# Seminar 3
+# Seminar 4
 
 Все программы по CUDA лежат тут: https://github.com/akhtyamovpavel/ParallelComputationExamples/tree/master/CUDA
 
