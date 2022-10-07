@@ -134,8 +134,6 @@ nvcc full_uncoalesce.cu
 
 # Пирамида памяти CPU vs GPU, Shared memory
 
-<img width="600" alt="image" src="https://user-images.githubusercontent.com/36137274/194471891-cdea4874-84a6-4f13-94d4-b1f72cf4b0c0.png">
-
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/36137274/194471923-9e1f5e94-a1cf-4fe8-87d9-842c380eb027.png">
 
 Видим те же L1 и L2 кэш у видеокарты. Ко второму мы не имеем доступ, а доступ к первому неожиданно (в отличие от CPU) есть.
