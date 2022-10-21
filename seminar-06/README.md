@@ -14,14 +14,25 @@ https://gitlab.com/fpmi-atp/pd2022a-supplementary/global/-/blob/main/materials/0
 - Realtime-обработка данных -- SparkStreaming (microbatches), Spark Structured streaming (semi-realtime), Apache Flink (realtime)
 - HBase, Cassandra. NoSQL (not only SQL) поверх больших данных. Колоночно-ориентированные базы данных. 
 
+Кроме того есть еще:
+
+- Zookeeper: High-Available Coordination Service
+- Oozie: диспетчер задач для hadoop
+- Pig: язык обработки данных и среда выполнения (высокоуровневые команды)
+- Mahout — библиотека и движок машинного обучения на больших данных
+
+и многие другие (смотри Related projects https://hadoop.apache.org/, но и там не все проекты)
+
 # HDFS
 
 Кластер:
 
 <p float="left">
 	<img width="450" alt="image" src="https://user-images.githubusercontent.com/36137274/197103779-134adc1d-75d2-44cc-9863-db9bbd93b7ee.png">
-	<img width="450" alt="image" src="https://user-images.githubusercontent.com/36137274/197120156-8c8e7954-0191-4b5d-b017-c040be38be68.png">
+	<img width="450" alt="image" src="https://user-images.githubusercontent.com/36137274/197120983-05ec9952-c2c9-44a1-b9d5-357f613db4fd.png">
 <p float="left">
+
+https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html
 
 Клиентская машина:
 
