@@ -21,7 +21,7 @@ https://gitlab.com/fpmi-atp/pd2022a-supplementary/global/-/blob/main/materials/0
 - Pig: язык обработки данных и среда выполнения (высокоуровневые команды)
 - Mahout — библиотека и движок машинного обучения на больших данных
 
-и многие другие (смотри Related projects https://hadoop.apache.org/, но и там не все проекты. Все (или почти) перечислены тут https://projects.apache.org/projects.html?category)
+и многие другие (смотри Related projects https://hadoop.apache.org/, но и там не все проекты. Все (или почти) перечислены тут https://projects.apache.org/projects.html)
 
 # HDFS
 
