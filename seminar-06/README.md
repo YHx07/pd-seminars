@@ -14,13 +14,13 @@ https://gitlab.com/fpmi-atp/pd2022a-supplementary/global/-/blob/main/materials/0
 - Realtime-обработка данных -- SparkStreaming (microbatches), Spark Structured streaming (semi-realtime), Apache Flink (realtime)
 - HBase, Cassandra. NoSQL (not only SQL) поверх больших данных. Колоночно-ориентированные базы данных. 
 
-<img width="562" alt="image" src="https://user-images.githubusercontent.com/36137274/197120156-8c8e7954-0191-4b5d-b017-c040be38be68.png">
-
 # HDFS
 
 Кластер:
 
-![image](https://user-images.githubusercontent.com/36137274/197103779-134adc1d-75d2-44cc-9863-db9bbd93b7ee.png)
+<img width="550" alt="image" src="https://user-images.githubusercontent.com/36137274/197103779-134adc1d-75d2-44cc-9863-db9bbd93b7ee.png">
+
+<img width="550" alt="image" src="https://user-images.githubusercontent.com/36137274/197120156-8c8e7954-0191-4b5d-b017-c040be38be68.png">
 
 Клиентская машина:
 
