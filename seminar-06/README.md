@@ -2,6 +2,20 @@
 
 https://gitlab.com/fpmi-atp/pd2022a-supplementary/global/-/blob/main/materials/07-hdfs.md
 
+# Hadoop
+
+<img width="604" alt="image" src="https://user-images.githubusercontent.com/36137274/197119834-14dc1f45-e6f4-4ce7-ac18-ac7e2815cede.png">
+
+- HDFS -- хранение данных (файловая система)
+- YARN -- Планирование задач обработки данных (Yet Another resource negotiator)
+- MapReduce -- парадигма для распределенных вычислений
+- Hive -- SQL-фреймворк поверх MapReduce
+- Spark -- Больше данных хранится в памяти => обработка быстрее
+- Realtime-обработка данных -- SparkStreaming (microbatches), Spark Structured streaming (semi-realtime), Apache Flink (realtime)
+- HBase, Cassandra. NoSQL (not only SQL) поверх больших данных. Колоночно-ориентированные базы данных. 
+
+<img width="562" alt="image" src="https://user-images.githubusercontent.com/36137274/197120156-8c8e7954-0191-4b5d-b017-c040be38be68.png">
+
 # HDFS
 
 Кластер:
