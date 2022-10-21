@@ -92,6 +92,12 @@ module add mpi/openmpi4-x86_64
 module add centos/8/mpi/hpcx-v2.7.0
 ```
 
+Посмотреть какие модули есть на кластере можно с помощью команды:
+
+```[bash]
+module avail
+```
+
 После этого ```mpicc``` и ```mpic++``` подгрузятся в `$PATH` и можно:
 
 ```[bash]
