@@ -2,8 +2,6 @@
 
 Все программы по CUDA лежат тут: https://github.com/akhtyamovpavel/ParallelComputationExamples/tree/master/CUDA
 
-in progres..
-
 # CUDA - 3
 
 Рассмотрим 2 задачи:
@@ -509,4 +507,3 @@ nvcc correct_scan.cu
  0 | 1 | 2 | 3 |...|31 |32 |33 |34 |...|64 |65 |66 |
 ---|---|---|---|---|---|---|---|---|---|---|---|---|
  0 | 1 | 2 | 3 |...|31 | - |32 |33 |...|63 | - |64 |
- 

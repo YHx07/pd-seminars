@@ -2,11 +2,37 @@
 
 https://gitlab.com/fpmi-atp/pd2022a-supplementary/global/-/blob/main/materials/07-hdfs.md
 
+# Hadoop
+
+<img width="604" alt="image" src="https://user-images.githubusercontent.com/36137274/197119834-14dc1f45-e6f4-4ce7-ac18-ac7e2815cede.png">
+
+- HDFS -- хранение данных (файловая система)
+- YARN -- Планирование задач обработки данных (Yet Another resource negotiator)
+- MapReduce -- парадигма для распределенных вычислений
+- Hive -- SQL-фреймворк поверх MapReduce
+- Spark -- Больше данных хранится в памяти => обработка быстрее
+- Realtime-обработка данных -- SparkStreaming (microbatches), Spark Structured streaming (semi-realtime), Apache Flink (realtime)
+- HBase, Cassandra. NoSQL (not only SQL) поверх больших данных. Колоночно-ориентированные базы данных. 
+
+Кроме того есть еще:
+
+- Zookeeper: High-Available Coordination Service
+- Oozie: диспетчер задач для hadoop
+- Pig: язык обработки данных и среда выполнения (высокоуровневые команды)
+- Mahout — библиотека и движок машинного обучения на больших данных
+
+и многие другие (смотри Related projects https://hadoop.apache.org/, но и там не все проекты. Все (или почти) перечислены тут https://projects.apache.org/projects.html)
+
 # HDFS
 
 Кластер:
 
-![image](https://user-images.githubusercontent.com/36137274/197103779-134adc1d-75d2-44cc-9863-db9bbd93b7ee.png)
+<p float="left">
+	<img width="450" alt="image" src="https://user-images.githubusercontent.com/36137274/197103779-134adc1d-75d2-44cc-9863-db9bbd93b7ee.png">
+	<img width="450" alt="image" src="https://user-images.githubusercontent.com/36137274/197120983-05ec9952-c2c9-44a1-b9d5-357f613db4fd.png">
+<p float="left">
+
+https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html
 
 Клиентская машина:
 
