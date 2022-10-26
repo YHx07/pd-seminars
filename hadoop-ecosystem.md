@@ -17,6 +17,10 @@ Yandex Cloud:
 - [Google Cloud](https://cloud.yandex.com/en/docs/overview/platform-comparison/gcp)
 - [Azure](https://cloud.yandex.com/en/docs/overview/platform-comparison/azure)
 
+## Материал:
+
+- https://www.databricks.com/learn
+
 ## Обзор сервисов связанных с Hadoop:
 
 №  | Сервис    | Что делает
