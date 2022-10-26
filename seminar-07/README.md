@@ -4,3 +4,4 @@ https://gitlab.com/fpmi-atp/pd2022a-supplementary/global/-/blob/main/materials/0
 
 # MapReduce 1
 
+<img width="800" alt="image" src="./MapReduce-v3.png">
