@@ -8,7 +8,16 @@ in progres..
 
 Ещё больше тут: [Big Data Landscape 2021](https://cloud.mail.ru/public/xqZH/yE4cb94e1)
 
-Обзор сервисов в Hadoop:
+## В 2022 году сервисы уходят в Cloud Computing:
+
+Аналоги Cloud Computing сервисов Google, AWS и Azure: [cloud.google.com/aws-azure-gcp](https://cloud.google.com/free/docs/aws-azure-gcp-service-comparison) ([копия webarchive](https://web.archive.org/web/20221005003812/https://cloud.google.com/free/docs/aws-azure-gcp-service-comparison)).
+
+Yandex Cloud:
+- [AWS](https://cloud.yandex.com/en/docs/overview/platform-comparison/aws)
+- [Google Cloud](https://cloud.yandex.com/en/docs/overview/platform-comparison/gcp)
+- [Azure](https://cloud.yandex.com/en/docs/overview/platform-comparison/azure)
+
+## Обзор сервисов связанных с Hadoop:
 
 №  | Сервис    | Что делает
 ---|-----------|--------------------
@@ -24,7 +33,3 @@ in progres..
 10 | Tez	     | Платформа на основе YARN, которая обеспечивает высокопроизводительную обработку данных в Hadoop. Основная особенность Tez заключается в создании DAG (directed acyclic graph — направленного ациклического графа) и часто используется как альтернатива Hadoop MapReduce
 11 | YARN	     | Связывает блок хранения Hadoop, то есть HDFS (распределенная файловая система Hadoop), с различными инструментами обработки. Основная идея YARN - облегчить MapReduce, взяв на себя ответственность за управление ресурсами и планирование работ. YARN предоставляет Hadoop возможность запускать задания, не связанные с MapReduce, в рамках Hadoop
 12 | Zookeeper | Централизованная служба для поддержки информации о конфигурации, именования, обеспечения распределенной синхронизации и предоставления групповых служб
-
-
----
-https://hadoopecosystemtable.github.io/
