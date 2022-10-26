@@ -26,10 +26,10 @@ https://hadoop.apache.org/docs/stable/hadoop-mapreduce-client/hadoop-mapreduce-c
  - 8088 --
  - 19888 --
  - 8888 --
+ 
+# Ещё про сервисы Hadoop:
 
-# Ещё про сервисы по работе с hadoop
-
-https://platform.digital.gov.ru/docs/analytics/platform-v-hadoop
+https://github.com/YHx07/pd-seminars/blob/dev/hadoop-ecosystem.md
 
 # Материалы
 
