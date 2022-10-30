@@ -170,6 +170,14 @@ bash run.sh
 
 `/home/velkerr/seminars/pd2020/07_pi_stub`
 
+1. Копируем папку к себе: `cp -r ../07_pi_stub ~/07_pi_stub`.
+2. Идем в свою корневую директорию: `cd ~`, открываем папку `cd 07_pi_stub`.
+3. Запускаем `./generate.py 1000` -- сгенерируется 1000 точек, они запишутся в 10 файлов в папке `pi_points`.
+4. Создаем папку pi_result в hdfs: `hdfs dfs -mkdir pi_result`.
+5. Кладем файлы с сгенерированными точками в hdfs: `hdfs dfs -put pi_points`.
+6. Запускаем `bash run.sh`.
+7. Смотрим результаты `hdfs dfs -cat pi_result/part-00000`.
+
 # Материалы
 
 1. https://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/
