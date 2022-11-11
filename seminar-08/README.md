@@ -50,4 +50,6 @@ yarn jar target/WordCount-1.0.jar ru.mipt.examples.WordCount /data/griboedov wor
 
 `velkerr//seminars/pd2020/10-globalsort$ cd src/ru/mipt/GlobalSorter.java`
 
+
+`velkerr/seminars/hadoop-course/02-avg-page-life$`
 ### Joins
