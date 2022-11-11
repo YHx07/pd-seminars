@@ -46,4 +46,8 @@ yarn jar target/WordCount-1.0.jar ru.mipt.examples.WordCount /data/griboedov wor
 
 ### Глобальная сортировка
 
+Смотрим код:
+
+`velkerr//seminars/pd2020/10-globalsort$ cd src/ru/mipt/GlobalSorter.java`
+
 ### Joins
