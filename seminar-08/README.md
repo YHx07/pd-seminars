@@ -33,7 +33,7 @@ https://hadoop.apache.org/docs/r3.0.1/api/org/apache/hadoop/io/Writable.html
 
 Сборка командой `mvn package` в директории с `pom.xml` файлом. (Кэши maven лежат в директории .m2).
 
-Запуск в файле `run.sh`:
+Скрипт запуска в файле `run.sh`:
 
 ```bash
 #! /usr/bin/env bash
@@ -50,6 +50,10 @@ yarn jar target/WordCount-1.0.jar ru.mipt.examples.WordCount /data/griboedov wor
 
 `velkerr//seminars/pd2020/10-globalsort$ cd src/ru/mipt/GlobalSorter.java`
 
+### Пример где есть всё
+
+Смотрим код:
 
 `velkerr/seminars/hadoop-course/02-avg-page-life$`
+
 ### Joins
