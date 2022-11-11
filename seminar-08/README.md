@@ -54,6 +54,10 @@ yarn jar target/WordCount-1.0.jar ru.mipt.examples.WordCount /data/griboedov wor
 
 Смотрим код:
 
-`velkerr/seminars/hadoop-course/02-avg-page-life$`
+`velkerr/seminars/hadoop-course/02-avg-page-life`
 
 ### Joins
+
+Смотрим код:
+
+`velkerr/seminars/pd2020/11-joins`
