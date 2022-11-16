@@ -1,3 +1,5 @@
+Форма для отзывов: https://forms.gle/kkcPJtXRsJKmKyNo8. Также, я буду благодарен за Merge Request-ы в этом репозитории.
+
 # Seminar 2
 
 # MPI
