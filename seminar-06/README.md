@@ -1,3 +1,5 @@
+Форма для отзывов: https://forms.gle/kkcPJtXRsJKmKyNo8. Также, я буду благодарен за Merge Request-ы в этом репозитории.
+
 # Seminar 6
 
 https://gitlab.com/fpmi-atp/pd2022a-supplementary/global/-/blob/main/materials/07-hdfs.md
