@@ -78,6 +78,8 @@ https://cloud.mail.ru/public/1NaG/ujY4mYy2e
 - Итерируемый. Можем делать обход RDD. RDD — ..distributed.., он распределен по нодам кластера. Между частями можем ходить как по списку.
 - Восстанавливаемый. Каждая партиция помнит как она была получена (часть графа вычислений) и при утере может быть восстановлена.
 
+[Статья на DataBricks про Spark RDD](https://www.databricks.com/glossary/what-is-rdd). Материалы Databricks, наверное, один из самых лучших источников про работу на Spark.
+
 RDD API состоит из операций двух типов:
 
 - action
@@ -99,6 +101,8 @@ Spark DataFrames:
 - Похожи на DF в pandas или SQL
 - Работают поверх RDD
 
+Про Spark DataFrames смотри следующий семинар.
+
 ### PySpark Session
 
 - Spark Context
@@ -106,7 +110,7 @@ Spark DataFrames:
 - Hive Context
 - Streaming Context
 
-Пример как поднимается Spark Context:
+Пример команды для запуска Spark Context:
 
 ```python
 import os
@@ -134,3 +138,9 @@ spark = SparkSession.builder.config(conf=conf).appName('Name').getOrCreate()
 PYSPARK_DRIVER_PYTHON=jupyter PYSPARK_PYTHON=/usr/bin/python3 PYSPARK_DRIVER_PYTHON_OPTS='notebook --ip="*" --port=<PORT> --no-browser' pyspark2 --master=yarn --num-executors=<N>
 ```
 Spark Context выделяется вместе с поднятием юпитер ноутбука.
+
+### YARN UI
+
+На нашем кластере UI настроен не в полном объеме. Подробнее про YARN UI можно посмотрть тут (но для курса это не нужно):
+
+https://github.com/YHx07/pd-seminars/blob/dev/seminar-11/yarn-ui.md
