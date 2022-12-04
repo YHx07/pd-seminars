@@ -137,6 +137,19 @@ Task Time (GC Time) == Garbage collection time. Время которое тра
 </tr>
 </table>
 
+..и внутри джобы 25 имеем два stage:
+
+![image](https://user-images.githubusercontent.com/36137274/205511987-36dee1eb-ef2d-4fa3-baf9-dfbd702e44a5.png)
+
+- Stage 29: groupBy
+- 
+![image](https://user-images.githubusercontent.com/36137274/205512055-2cfe2320-ef64-46fb-bb94-19f873779bbc.png)
+У меня было 2 экзекьютора, поэтому 4 tasks разделились между ними поровну: 2 и 2 (см. Executor Id). Было бы 3 экзекьютора, то два выполнили бы по 1 tasks, один — 2 tasks.
+
+- Stage 30: count
+
+![image](https://user-images.githubusercontent.com/36137274/205512077-f7aa9585-8c10-4844-9450-6bc6b479a780.png)
+
 Что происходило:
 
 Последовательность трансформаций определеяет граф вычислений (DAG). В нем есть партиции и зависимости между партициями. Таким образом Spark имеет всю необходимую информацию для вычисления графа в любой точке и возможных оптимизаций.
