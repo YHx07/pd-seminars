@@ -6,7 +6,9 @@ in progres..
 
 <img width="1000" alt="image" src="pic/hadoop-ecosystem.png">
 
-Ещё больше тут: [Big Data Landscape 2021](https://cloud.mail.ru/public/xqZH/yE4cb94e1)
+Ещё больше тут: 
+- [Big Data Landscape 2021](https://cloud.mail.ru/public/xqZH/yE4cb94e1)
+- [AI Landscape](https://mad.firstmark.com/)
 
 ## В 2022 году сервисы уходят в Cloud Computing:
 
