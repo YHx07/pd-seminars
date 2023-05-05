@@ -139,6 +139,8 @@ PYSPARK_DRIVER_PYTHON=jupyter PYSPARK_PYTHON=/usr/bin/python3 PYSPARK_DRIVER_PYT
 ```
 Spark Context выделяется вместе с поднятием юпитер ноутбука.
 
+Про параметры spark context есть отличная статья от Авито: https://habr.com/ru/companies/avito/articles/732870/ .
+
 ### YARN UI
 
 На нашем кластере UI настроен не в полном объеме, но большая часть есть (applications, job-ы и stage-ы).  Подробнее про YARN UI можно посмотрть тут:
