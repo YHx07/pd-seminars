@@ -139,7 +139,14 @@ Mac OS: `brew install open-mpi`
 
 ### Запуск программ MPI на кластере
 
-Чтобы отправить задачу в очередь на Slurm (ресурсный менеджер кластера):
+Готовим файл `run.sh`:
+
+```bash
+#!/usr/bin/env bash
+mpiexec ./a.out
+```
+
+Отправляем задачу в очередь на Slurm (ресурсный менеджер кластера):
 ```bash
 sbatch -n <NUM_OF_PROCESSES> ./run.sh
 ```
