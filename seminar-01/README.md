@@ -200,6 +200,7 @@ https://github.com/akhtyamovpavel/ParallelComputationExamples/tree/master/MPI
 
 ### Полезные ссылки:
 * [Mануал OpenMPI 4.0](https://www.open-mpi.org/doc/current/)
+* [MPI для начинающих](https://www.opennet.ru/docs/RUS/MPI_intro/)
 * [Tutorial по MPI с примерами](https://mpitutorial.com)
 * [Примеры работы с sbatch в bash](https://hpc-uit.readthedocs.io/en/latest/jobs/examples.html)
 * [Python-клиент для работы с sbatch](https://github.com/luptior/pysbatch)
