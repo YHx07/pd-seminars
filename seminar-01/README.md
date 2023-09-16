@@ -203,5 +203,6 @@ https://github.com/akhtyamovpavel/ParallelComputationExamples/tree/master/MPI
 * [MPI для начинающих](https://www.opennet.ru/docs/RUS/MPI_intro/)
 * [Tutorial по MPI с примерами](https://mpitutorial.com)
 * [Примеры работы с sbatch в bash](https://hpc-uit.readthedocs.io/en/latest/jobs/examples.html)
+* [Текст про slurm](https://parallel.uran.ru/book/export/html/547)
 * [Python-клиент для работы с sbatch](https://github.com/luptior/pysbatch)
 * [Python-библиотека для разработки MPI программ](https://mpi4py.readthedocs.io/en/stable/intro.html)
