@@ -165,11 +165,9 @@ for i in [1,2]:
 
 `#pragma omp for collapse(n) nowait` -- Можно использовать несколько опций.
 
-`#pragma omp critical` -- Указывает, что код выполняется только в одном потоке одновременно.
+`#pragma omp critical` -- Указывает, что в этой секции работает только одна нить.
 
 `#pragma omp barrier` -- Синхронизирует все потоки; все потоки приостанавливаются у барьера, пока все потоки не выполнят барьер.
-
-[Взял отсюда](https://learn.microsoft.com/ru-ru/cpp/parallel/openmp/reference/openmp-directives?view=msvc-170#threadprivate)
 
 #### Полезные функции:
 
@@ -197,3 +195,4 @@ OpenMP можно запускать на своей машине, обычно 
 * [OpenMP specifications](http://www.openmp.org/specifications/)
 * [OpenMP tutorial](https://www.openmp.org/resources/tutorials-articles/)
 * [OpenMP more examples](https://github.com/ilyak/openmp-tutorial)
+* [OpenMP Microsoft](https://learn.microsoft.com/ru-ru/cpp/parallel/openmp/reference/openmp-directives?view=msvc-170#threadprivate)
