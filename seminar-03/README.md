@@ -16,7 +16,7 @@ GPU -- Graphics Processing Unit -- видеокарта.
 
 Идея: вектор содержит много чисел и все элементры вектора подвергаются одной операции. Видеокарта позволит произвести эти однотипные вычисления за один такт процессора.
 
-CUDA Toolkit можно использовать и для вычислений на TPU -- Tensor Processing Unit. Почитать про сравнение CPU, GPU, TPU можно [на cloud.google](https://cloud.google.com/tpu/docs/intro-to-tpu), или [на Habr-е на русском](https://habr.com/ru/post/422317/), или посмотреть [интерактивную презентацию Google](https://storage.googleapis.com/nexttpu/index.html).
+CUDA Toolkit можно использовать и для вычислений на TPU -- Tensor Processing Unit. Почитать про сравнение CPU, GPU, TPU можно [на cloud.google](https://cloud.google.com/tpu/docs/intro-to-tpu), или [на Habr-е на русском](https://habr.com/ru/post/422317/).
 
 ## Кластер с GPU
 
