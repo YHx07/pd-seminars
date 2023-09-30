@@ -51,10 +51,14 @@ nvidia-smi
 ## Программирование на CUDA
 
 - Thread
-- Warp -- набор потоков, физически отрабатываемых за один такт времени.
+- Warp -- набор потоков, физически отрабатываемых за один такт времени. (GPU сама объединяет потоки (thread-ы) в warp-ы)
 - Block -- набор потоков, логически отрабатываемых в одну единицу времени, block-и делятся на warp-ы в физическом исполнении. Программируя мы имеем дело с block-ами, с точки зрения кода warp-ы не видим.
 - Grid -- набор из блоков, количество блоков в grid-е задается пользователем.
 - Streaming Multiprocessor (SM) -- аналог физических ядер. Один блок обрабатывается одним SM.
+
+
+A pictorial correlation of a programmer's perspective versus a hardware perspective of a thread block in GPU (википедия):
+![image](https://github.com/YHx07/pd-seminars/assets/36137274/0234d7f0-4eb6-4e22-94c0-2bcf8b33ca28)
 
 ![image](https://user-images.githubusercontent.com/36137274/193191711-56f2a262-45b4-45e2-8d83-1b13557cc03c.png)
 
