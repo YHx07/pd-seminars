@@ -4,6 +4,16 @@
 
 Все программы по CUDA лежат тут: https://github.com/akhtyamovpavel/ParallelComputationExamples/tree/master/CUDA
 
+В этом семинаре:
+1. Базовые понятия CUDA
+2. Запускать программ
+3. Замер времениа работы программы и профилировщик
+
+Выигрыша по времени в этих задачах не будет. Чтобы выиграть по времени в вычислениях на GPU нужно:
+1. Сложная задача, в которой время работы сравнимо с временем передачи данных на видеокарту,
+2. Правильно управлять памятью на видеокарте, чтобы получить выигрыш относительно CPU.
+Ускорение в работе получим на следующем семинаре.
+
 # CUDA
 
 CUDA -- Compute Unified Device Architecture. Мы будет использовать CUDA Toolkit для ускорения вычислений программ, написанных на C++, на видеокартах Nvidia. Инструкция на [официальном сайте Nvidia](https://developer.nvidia.com/how-to-cuda-c-cpp).
@@ -70,6 +80,7 @@ A pictorial correlation of a programmer's perspective versus a hardware perspect
 ![image](https://github.com/YHx07/pd-seminars/assets/36137274/0234d7f0-4eb6-4e22-94c0-2bcf8b33ca28)
 
 ![image](https://user-images.githubusercontent.com/36137274/193191711-56f2a262-45b4-45e2-8d83-1b13557cc03c.png)
+
 Аналогия с огородом:
 - Растение -- thread
 - Ряд в грядке -- warp
