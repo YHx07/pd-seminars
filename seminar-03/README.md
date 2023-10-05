@@ -70,6 +70,13 @@ A pictorial correlation of a programmer's perspective versus a hardware perspect
 ![image](https://github.com/YHx07/pd-seminars/assets/36137274/0234d7f0-4eb6-4e22-94c0-2bcf8b33ca28)
 
 ![image](https://user-images.githubusercontent.com/36137274/193191711-56f2a262-45b4-45e2-8d83-1b13557cc03c.png)
+Аналогия с огородом:
+- Растение -- thread
+- Ряд в грядке -- warp
+- Грядка -- block
+- Ряд из грядок -- grid
+
+Роль SM -- длинная поливалка
 
 Пример с лекции: Например всего на видеокарте 2560 ядер и 20 SM => один SM управляет 128 ядрами. Один warp состоит из 32 потоков, поэтому один SM управляет 4 warp-ами.
 
