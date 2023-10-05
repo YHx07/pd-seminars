@@ -14,7 +14,7 @@
 Ещё полезную информацию можно найти в английской википедии в разделе Technical Specification:
 - https://en.wikipedia.org/wiki/CUDA. (Например, что warp size всегда был 32)
 
-Подключиться на кластер: ssh <login>@lorien.atp-fivt.org. Логин и пароль должны были прийти на почту. В остальном -- смотри [инструкцию GPU-сервер АТП](https://docs.google.com/document/d/1hK_4TVghEdD1r18WHG2zDHw1QSQe-09sb-GWE9kAUzA/edit#heading=h.i4z3eccegkh6).
+Подключиться на кластер: `ssh <login>@lorien.atp-fivt.org`. Логин и пароль должны были прийти на почту. В остальном -- смотри [инструкцию GPU-сервер АТП](https://docs.google.com/document/d/1hK_4TVghEdD1r18WHG2zDHw1QSQe-09sb-GWE9kAUzA/edit#heading=h.i4z3eccegkh6).
 
 # Доступ к данным, ILP
 
