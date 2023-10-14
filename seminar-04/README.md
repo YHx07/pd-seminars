@@ -412,6 +412,8 @@ cublasSdot(...) -- вычисление скалярного произведе�
 cublasSnrm2(...) -- вычисление l2 нормы.
 ```
 
+`nvcc 03-cosine-distance.cu -lcublas`
+
 ## PyCuda
 
 07-pycuda/01-simple-ariphmetic.py
