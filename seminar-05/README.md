@@ -8,15 +8,15 @@
 
 Примеры:
 
-1. Reduction. Наивный алгоритм.
-2. Reduction. Уменьшим количество warp-итераций. Bank conflict.
-3. Reduction. Решение bank conflict-а.
-4. Reduction. Ещё ускорение.
-5. Reduction. Ещё ускорение.
-6. Reduction. Ещё ускорение.
-7. Scan. Наивный алгоритм: получили data-race.
-8. Scan. Уберем data-race. Bank conflict.
-9. Scan. Решение bank conflict-а.
+1. Reduction. Наивный алгоритм. `/04-reduction/01-default-sum`.
+2. Reduction. Уменьшим количество warp-итераций. Bank conflict. `/04-reduction/02-another-math`.
+3. Reduction. Решение bank conflict-а. `/04-reduction/03-improving-bank-conflicts`.
+4. Reduction. Ещё ускорение (Количество блоков меньше в 2 раза). `/04-reduction/03-improving-bank-conflicts`.
+5. Reduction. Ещё ускорение (Разворачиваем цикл).`/04-reduction/05-warp-reduce`.
+6. Reduction. Ещё ускорение (Сдвиг по маске внутри warp-а). `/04-reduction/06-warp-design-specific`.
+7. Scan. Наивный алгоритм: получили data-race. `/05-scan/naive_cuda_scan.cu`.
+8. Scan. Уберем data-race. Bank conflict. `/05-scan/correct_scan.cu`.
+9. Scan. Решение bank conflict-а. `/05-scan/scan_bank_conflicts.cu`.
 ..to be done
 
 # CUDA - 3
