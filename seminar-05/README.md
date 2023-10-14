@@ -476,7 +476,7 @@ nvcc naive_cuda_scan.cu
 
 #### Уберем data-race. По степеням двойки сохраняем элементы:
 
-05-scan/correct_scan.cu 
+05-scan/correct_scan.cu
 
 Первая стадия:
 
@@ -517,7 +517,7 @@ nvcc correct_scan.cu
 
 #### Решение: Пропускаем каждый 32-й элемент массива
 
-05-scan//scan_bank_conflicts.cu
+05-scan/scan_bank_conflicts.cu
 
 Делаем сдвиг, чтобы избежать банк конфликт: 
 
