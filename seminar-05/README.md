@@ -4,6 +4,21 @@
 
 Все программы по CUDA лежат тут: https://github.com/akhtyamovpavel/ParallelComputationExamples/tree/master/CUDA
 
+В этом семинаре по сути то же, что на лекции: про задачи Reduction и Scan. 
+
+Примеры:
+
+1. Reduction. Наивный алгоритм.
+2. Reduction. Уменьшим количество warp-итераций. Bank conflict.
+3. Reduction. Решение bank conflict-а.
+4. Reduction. Ещё ускорение.
+5. Reduction. Ещё ускорение.
+6. Reduction. Ещё ускорение.
+7. Scan. Наивный алгоритм: получили data-race.
+8. Scan. Уберем data-race. Bank conflict.
+9. Scan. Решение bank conflict-а.
+..to be done
+
 # CUDA - 3
 
 Рассмотрим 2 задачи:
