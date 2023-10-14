@@ -14,6 +14,17 @@
 2. Правильно управлять памятью на видеокарте, чтобы получить выигрыш относительно CPU.
 Ускорение в работе получим на следующем семинаре.
 
+Примеры:
+
+1. Сложение двух массивов на CPU. `/00-hello-world-single-thread`.
+2. Сложение двух массивов на GPU на одном потоке. `/01-hello-world-single-cuda-thread`.
+3. Сложение двух массивов на GPU на нескольких потоках. `/02-add-threads`.
+4. Сложение двух массивов на GPU на нескольких потоках и нескольких ядрах. `/03-add-blocks`.
+5. Эксперимент, почему программа из пунктов 3-4 работает медленно.
+6. Сложение двух массивов на GPU на нескольких потоках и нескольких ядрах с копированием на память видеокарты через memcpy. `/04-memcpy`.
+7. Запуск программы из пункта 6 с примененеим профилировщика `nvprof`.
+8. Инструмент для замера времени работы программы на CUDA. `/02-device-specs-benchmarks/00-time-measurement`.
+
 # CUDA
 
 CUDA -- Compute Unified Device Architecture. Мы будет использовать CUDA Toolkit для ускорения вычислений программ, написанных на C++, на видеокартах Nvidia. Инструкция на [официальном сайте Nvidia](https://developer.nvidia.com/how-to-cuda-c-cpp).
@@ -616,3 +627,4 @@ int main() {
 - [Developer.nvidia.com](https://developer.nvidia.com/accelerated-computing-training)
 - [Sample Code](https://github.com/nvidia/cuda-samples)
 - [Seminar_CUDA_1 -- Chernetskiy](https://gitlab.com/fpmi-atp/pd2022a-supplementary/chernetskiy/-/blob/main/Seminar_3_CUDA_1.md)
+`11
