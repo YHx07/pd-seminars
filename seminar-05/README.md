@@ -17,6 +17,7 @@
 7. Scan. Наивный алгоритм: получили data-race. `/05-scan/naive_cuda_scan.cu`.
 8. Scan. Уберем data-race. Bank conflict. `/05-scan/correct_scan.cu`.
 9. Scan. Решение bank conflict-а. `/05-scan/scan_bank_conflicts.cu`.
+
 ..to be done
 
 # CUDA - 3
