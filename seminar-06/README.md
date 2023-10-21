@@ -55,7 +55,7 @@ https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign
 
 Можно зайти либо под своей учеткой, либо под общей:
 
-    login: hdfsuser
+    ssh hdfsuser@mipt-client.atp-fivt.org
     password: hdfsuser
     
 Зайти на любую датаноду, например на mipt-node08, можно командой:
