@@ -166,7 +166,7 @@ https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign
 
 #### WebHDFS REST API ####
 
-Открыть файл на чтение, получив редирект на нужныю датаноду. Выполняет команду на сервере:
+Открыть файл на чтение, получив редирект на нужную датаноду. Выполняет команду на сервере:
 
 	$ curl -i "http://mipt-master.atp-fivt.org:50070/webhdfs/v1/data/wiki/en_articles_part/articles-part?op=OPEN"
 
