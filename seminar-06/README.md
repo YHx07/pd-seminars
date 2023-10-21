@@ -6,6 +6,8 @@ https://gitlab.com/fpmi-atp/pd2022a-supplementary/global/-/blob/main/materials/0
 
 # Hadoop
 
+Экосистема Hadoop:
+
 <img width="604" alt="image" src="https://user-images.githubusercontent.com/36137274/197119834-14dc1f45-e6f4-4ce7-ac18-ac7e2815cede.png">
 
 - HDFS -- хранение данных (файловая система)
@@ -27,12 +29,21 @@ https://gitlab.com/fpmi-atp/pd2022a-supplementary/global/-/blob/main/materials/0
 
 # HDFS
 
+HDFS -- распределенная файловая система Hadoop для хранения файлов больших размеров, поблочно распределённой по узлам вычислительного кластера.
+
 Кластер:
 
 <p float="left">
 	<img width="450" alt="image" src="https://user-images.githubusercontent.com/36137274/197103779-134adc1d-75d2-44cc-9863-db9bbd93b7ee.png">
 	<img width="450" alt="image" src="https://user-images.githubusercontent.com/36137274/197120983-05ec9952-c2c9-44a1-b9d5-357f613db4fd.png">
 <p float="left">
+
+Кластер хранит данные в HDFS и произовдит вычисления. На картинке слева красным цветом обозначена Name Node -- она хранит метаинформацию: где расположены файлы, какие имеются доступы к файлам, логи изменения файловой системы. 
+
+Для надежности в систему добавляют Secondary Namenode:
+- Получает текущий снимок файловой системы и лог изменений от NN, сливает, пересылает в NN.
+- Берёт на себя самую CPU-затратную задачу в NN.
+- Secondary Namenode не может заменить Name Node в случае ее отказа, но помогает в восстановлении информации.
 
 https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html
 
@@ -93,12 +104,12 @@ https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign
 
 Есть ли идеи почему в HDFS сделали -tail, но не сделали -head?
 
-* Объяснить вывод команды ls, например:
+* Вывод команды ls:
 
 		$ hdfs dfs -ls /data/wiki/en_articles
 		Found 1 items
 		-rw-r--r--   3 hdfs supergroup 12328051927 2017-07-03 23:21 /data/wiki/en_articles/articles
-	выводит пермиссии, число реплик, пользователя, группу, размер, время модификации. Посмотреть, что это совпадает со справкой в 
+	выводит permission, число реплик, пользователя, группу, размер, время модификации. Посмотреть, что это совпадает со справкой в 
 		
 		$ hdfs dfs -help
 
