@@ -60,8 +60,9 @@ https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign
     
 Зайти на любую датаноду, например на mipt-node08, можно командой:
 
-	$ sudo -u hdfsuser ssh hdfsuser@mipt-node08.atp-fivt.org
-
+```bash
+sudo -u hdfsuser ssh hdfsuser@mipt-node08.atp-fivt.org
+```
 
 ### Основные команды ###
 
@@ -69,69 +70,99 @@ https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign
 
 * Содержимое директорий:
 
-		$ hdfs dfs -ls /
-  		$ hdfs dfs -ls .
-  		$ hdfs dfs -ls 
-  
-	последние 2 эквивалентны и относятся к домашней директории; показать, где находится домашняя директория в hdfs `(/user/...)`
+```bash
+hdfs dfs -ls /
+hdfs dfs -ls .
+hdfs dfs -ls 
+```
+
+последние 2 эквивалентны и относятся к домашней директории; показать, где находится домашняя директория в hdfs `(/user/...)`
 
 * Создать директорию, загрузить в нее какой-нибудь текстовый файл:
 
-		$ hdfs dfs -mkdir <dir>
- 		$ hdfs dfs -put <local_file> <hdfs_file>
-		$ hdfs dfs -cat <file>
-	В последней можно поменять -cat на -text. `-text` распознает кодировку и декодирует файл. `-cat` этого не умеет (это нам понадобится когда будет работать с OutputFormat'ами в MapReduce).
-	Создать файл README:
-		
-		$ echo "read it" > README
-		$ echo "read it again" >> README
-		$ cat README
-	Загрузить его в HDFS, распечатать оттуда с помощью (-cat)
+```bash
+hdfs dfs -mkdir <dir>
+hdfs dfs -put <local_file> <hdfs_file>
+hdfs dfs -cat <file>
+```
+
+В последней можно поменять -cat на -text. `-text` распознает кодировку и декодирует файл. `-cat` этого не умеет (это нам понадобится когда будет работать с OutputFormat'ами в MapReduce).
+
+Создать файл README:
+
+```bash
+echo "read it" > README
+echo "read it again" >> README
+cat README
+```
+
+Загрузить его в HDFS, распечатать оттуда с помощью (-cat)
 
 * Переименование и копирование:
 
-		$ hdfs dfs -mv <file1> <file2>
- 		$ hdfs dfs -cp <file1> <file2>
-	Важно: копирование идет через клиента, для избежания этого или копирования вообще между кластерами есть команда hadoop distcp
+```bash
+hdfs dfs -mv <file1> <file2>
+hdfs dfs -cp <file1> <file2>
+```
+
+Важно: копирование идет через клиента, для избежания этого или копирования вообще между кластерами есть команда hadoop distcp
 
 * Исследовать директорию /data
 
-		$ hdfs dfs -ls /data
-	Вывести на экран часть какого-нибудь файла с помощью more (less) и head. Например, 2 первые строки из файла с Википедией:
+```bash
+hdfs dfs -ls /data
+```
 
-		$ hdfs dfs -cat /data/wiki/en_articles/articles | head -2
-		$ hdfs dfs -tail /data/wiki/en_articles/articles
+Вывести на экран часть какого-нибудь файла с помощью more (less) и head. Например, 2 первые строки из файла с Википедией:
+
+```
+hdfs dfs -cat /data/wiki/en_articles/articles | head -2
+hdfs dfs -tail /data/wiki/en_articles/articles
+```
 
 Есть ли идеи почему в HDFS сделали -tail, но не сделали -head?
 
 * Вывод команды ls:
+  
+```bash
+hdfs dfs -ls /data/wiki/en_articles
 
-		$ hdfs dfs -ls /data/wiki/en_articles
-		Found 1 items
-		-rw-r--r--   3 hdfs supergroup 12328051927 2017-07-03 23:21 /data/wiki/en_articles/articles
-	выводит permission, число реплик, пользователя, группу, размер, время модификации. Посмотреть, что это совпадает со справкой в 
+Found 1 items
+-rw-r--r--   3 hdfs supergroup 12328051927 2017-07-03 23:21 /data/wiki/en_articles/articles
+```
 		
-		$ hdfs dfs -help
+выводит permission, число реплик, пользователя, группу, размер, время модификации. Посмотреть, что это совпадает со справкой в 
+
+```bash
+hdfs dfs -help
+```
 
 * Сколько места занимают файлы и директории, например:
-		
-		$ hdfs dfs -du -h /data/wiki
-        11.5 G  34.4 G   /data/wiki/en_articles
-	выводит размер и занимаемое место. Последнее учитывает фактор репликации (3 по умолчанию, 2 в нашем случае)
+
+```
+hdfs dfs -du -h /data/wiki
+11.5 G  34.4 G   /data/wiki/en_articles
+```
+выводит размер и занимаемое место. Последнее учитывает фактор репликации (3 по умолчанию, 2 в нашем случае)
 
 * Изменить фактор репликации:
 
-		$ hdfs dfs -setrep <path>
-	Посмотреть на эффект с помощью ls.
-	(ставим флаг `-w` если хотим дождаться завершения команды, а не выполнять в фоновом режиме)
+```bash
+hdfs dfs -setrep <path>
+```
+Посмотреть на эффект с помощью ls.
+(ставим флаг `-w` если хотим дождаться завершения команды, а не выполнять в фоновом режиме)
 
-* Удалить файл: 
-
-		$ hdfs dfs -rm <file>
+* Удалить файл:
+  
+```bash
+hdfs dfs -rm <file>
+```
 или директорию
 
-		$ hdfs dfs -rm -r <file> 
-
+```bash
+hdfs dfs -rm -r <file> 
+```
 При удалении файл перемещается в корзину (~/.Trash). При этом в корзине воссоздаётся абсолютный путь к файлу (`.../.Trash/user/your_user/your_dir/your_file`). Для удаления в обход корзины используйте флаг `--skipTrash`.
 
 Остальные команды: -help
@@ -140,10 +171,13 @@ https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign
 
 Зайти на [http://mipt-master.atp-fivt.org:50070](http://mipt-master.atp-fivt.org:50070)
 
-Если доступа нет, пробросить порт 50070:
+Если доступа нет, пробросить порт 50070 (вместо MY_USER введите свой логин или `hdfsuser`):
 
-	$ ssh -L 50070:mipt-master.atp-fivt.org:50070 MY_USER@mipt-client.atp-fivt.org  # вместо MY_USER введите свой логин (`par***`)
-Тогда пока сессия ssh открыта, интерфейс будет тут: [http://localhost:50070](http://localhost:50070)
+```bash
+ssh -L 50070:mipt-master.atp-fivt.org:50070 MY_USER@mipt-client.atp-fivt.org
+```
+
+Тогда, пока сессия ssh открыта, интерфейс будет тут: [http://localhost:50070](http://localhost:50070). 
 
 Показать:
 
@@ -158,17 +192,23 @@ https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign
 
 Посмотреть, на какие блоки разбит файл, какого они размера, их идентификаторы, где они расположены:
 
-	$ hdfs fsck /data/wiki/en_articles_part -files -blocks -locations
+```bash
+hdfs fsck /data/wiki/en_articles_part -files -blocks -locations
+```
 
 Посмотреть информацию по одному блоку, например:
 
-	$ hdfs fsck -blockId blk_1073971176
+```bash
+hdfs fsck -blockId blk_1073971176
+```
 
 #### WebHDFS REST API ####
 
 Открыть файл на чтение, получив редирект на нужную датаноду. Выполняет команду на сервере:
 
-	$ curl -i "http://mipt-master.atp-fivt.org:50070/webhdfs/v1/data/wiki/en_articles_part/articles-part?op=OPEN"
+```bash
+curl -i "http://mipt-master.atp-fivt.org:50070/webhdfs/v1/data/wiki/en_articles_part/articles-part?op=OPEN"
+```
 
 Из результата предыдущей команды взять Location, добавить &length=100 - получить 100 первых символов файла.
 
@@ -232,12 +272,13 @@ user = <my_user> # например, velkerr
 ```
 
 3. Теперь можем пользоваться API.
+4. 
 ```python
->>> from hdfs import Config
->>> client = Config().get_client()
->>> client.list('/data')
-['MobodMovieLens', 'access_logs', 'course4' ... ]
+from hdfs import Config
+client = Config().get_client()
+client.list('/data')
 ```
+Вывод: `['MobodMovieLens', 'access_logs', 'course4' ... ]`
 
 [Больше примеров](https://hdfscli.readthedocs.io/en/latest/quickstart.html#reading-and-writing-files)
 * чтение, 
@@ -245,10 +286,12 @@ user = <my_user> # например, velkerr
 * скачивание и закачивание из локальной ФС
 
 Получение статуса файла (аналог FileStatus в Java API).
+
 ```python
->>> client.status('/data/wiki')
-{'accessTime': 0, 'length': 0, ...}
+client.status('/data/wiki')
 ```
+
+Вывод: `{'accessTime': 0, 'length': 0, ...}`
 
 Ещё библиотеки на Python: hadoopy pydoop dumbo mrjob .
 
