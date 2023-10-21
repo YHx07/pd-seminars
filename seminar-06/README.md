@@ -10,7 +10,7 @@ https://gitlab.com/fpmi-atp/pd2022a-supplementary/global/-/blob/main/materials/0
 
 - HDFS -- хранение данных (файловая система)
 - YARN -- Планирование задач обработки данных (Yet Another resource negotiator)
-- MapReduce -- парадигма для распределенных вычислений
+- MapReduce -- парадигма для распределенных вычислений. На курсе будем писать MapReduce задачи с помощью Hadoop Streaming. Но идея MapReduce используется и в Hive, и в Spark.
 - Hive -- SQL-фреймворк поверх MapReduce
 - Spark -- Больше данных хранится в памяти => обработка быстрее
 - Realtime-обработка данных -- SparkStreaming (microbatches), Spark Structured streaming (semi-realtime), Apache Flink (realtime)
