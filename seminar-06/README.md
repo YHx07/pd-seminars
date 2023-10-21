@@ -210,7 +210,42 @@ hdfs fsck -blockId blk_1073971176
 curl -i "http://mipt-master.atp-fivt.org:50070/webhdfs/v1/data/wiki/en_articles_part/articles-part?op=OPEN"
 ```
 
-Из результата предыдущей команды взять Location, добавить &length=100 - получить 100 первых символов файла.
+Вывод:
+```
+HTTP/1.1 307 TEMPORARY_REDIRECT
+Cache-Control: no-cache
+Expires: Sat, 21 Oct 2023 07:40:08 GMT
+Date: Sat, 21 Oct 2023 07:40:08 GMT
+Pragma: no-cache
+Expires: Sat, 21 Oct 2023 07:40:08 GMT
+Date: Sat, 21 Oct 2023 07:40:08 GMT
+Pragma: no-cache
+Content-Type: application/octet-stream
+X-FRAME-OPTIONS: SAMEORIGIN
+Location: http://mipt-node01.atp-fivt.org:50075/webhdfs/v1/data/wiki/en_articles_part/articles-part?op=OPEN&namenoderpcaddress=mipt-master.atp-fivt.org:8020&offset=0
+Content-Length: 0
+Server: Jetty(6.1.26.cloudera.4)
+```
+
+В команде мы обратились к Name Node, она отдала нам ссылку на место, где хранится файл -- в строке Location.
+
+Из результата предыдущей команды взять Location (можно взять команду ниже, но лучше убедиться, что ссылка та же), добавить &length=100 - получить 100 первых символов файла:
+
+```bash
+curl -i "http://mipt-node05.atp-fivt.org:50075/webhdfs/v1/data/wiki/en_articles_part/articles-part?op=OPEN&namenoderpcaddress=mipt-master.atp-fivt.org:8020&offset=0&length=100"
+```
+
+Вывод:
+```
+HTTP/1.1 200 OK
+Access-Control-Allow-Methods: GET
+Access-Control-Allow-Origin: *
+Content-Type: application/octet-stream
+Connection: close
+Content-Length: 100
+
+12	Anarchism         Anarchism is often defined as a political philosophy which holds the state to b
+```
 
 Подробнее: http://hadoop.apache.org/docs/r1.2.1/webhdfs.html
 
