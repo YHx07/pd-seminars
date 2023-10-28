@@ -180,10 +180,22 @@ bash run.sh
 6. Запускаем `bash run.sh`.
 7. Смотрим результаты `hdfs dfs -cat pi_result/part-00000`.
 
+## YT - MapReduce сисетма Яндекса (аналог Hadoop)
+
+- https://habr.com/ru/companies/yandex/articles/721526/
+- https://habr.com/ru/companies/yandex/articles/311104/
+- https://medium.com/yandex/ytsaurus-exabyte-scale-storage-and-processing-system-is-now-open-source-42e7f5fa5fc6
+![image](https://github.com/YHx07/pd-seminars/assets/36137274/58376b1a-a8e8-4d1d-b0c0-6309b2ef8697)
+
+## SDP Hadoop -- Sber Data Platform
+
+- О системе https://developers.sber.ru/docs/ru/sdp/sdphadoop/overview
+- Компоненты https://platformv.sbertech.ru/products/analitika-dannyh/sdp-hadoop
+
 # Материалы
 
 1. https://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/
 2. https://github.com/Ebazhanov/linkedin-skill-assessments-quizzes/blob/main/hadoop/hadoop-quiz.md
 3. https://cloud.yandex.ru/services/data-proc
 4. [https://sber.ru/legal/data_platform/](https://sber.ru/legal/data_platform/#SDP_Hadoop)
-5. YT - MapReduce сисетма Яндекса (аналог Hadoop) https://habr.com/ru/companies/yandex/articles/311104/
+
