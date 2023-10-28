@@ -97,7 +97,7 @@ bash run.sh
 
 ### Пример как искать ошибки
 
-Как дебажить код: попробуем добавить ошибку в `mapper.py` (например уберем закрывающуюся скобку). В терминале видим ошибку: `mapreduce.Job: Task Id : attempt_1665490806436_0462_m_000000_0, Status : FAILED Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads():`. Это значит, что редьюсер не получил данные. Заходим на `http://localhost:19888/jobhistory`. Находим задачу по названию, открываем:
+Как дебажить код: попробуем добавить ошибку в `mapper.py` (например уберем закрывающуюся скобку). В терминале видим ошибку: `mapreduce.Job: Task Id : attempt_1665490806436_0462_m_000000_0, Status : FAILED Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads():`. Это значит, что редьюсер не получил данные. Заходим на http://localhost:19888/jobhistory. Находим задачу по названию, открываем:
 
 <img width="750" alt="image" src="https://user-images.githubusercontent.com/36137274/198889899-b41bf1b7-65ec-4df8-8225-8d45a16e05cb.png">
 
