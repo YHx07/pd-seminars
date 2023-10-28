@@ -186,3 +186,4 @@ bash run.sh
 2. https://github.com/Ebazhanov/linkedin-skill-assessments-quizzes/blob/main/hadoop/hadoop-quiz.md
 3. https://cloud.yandex.ru/services/data-proc
 4. [https://sber.ru/legal/data_platform/](https://sber.ru/legal/data_platform/#SDP_Hadoop)
+5. YT - MapReduce сисетма Яндекса (аналог Hadoop) https://habr.com/ru/companies/yandex/articles/311104/
