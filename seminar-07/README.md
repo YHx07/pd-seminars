@@ -187,6 +187,7 @@ bash run.sh
 Но тем не менее, такие инструменты используют логику работы MapReduce под капотом. Например, SQL запрос будет разбиваться на несколько Map и Reduce задач (смотри занятие по Hive). Если знать как работает MapReduce, то можно писать более эффективные запросы (например сэкономить время на передаче данных между Map и Reduce c помощью Map-side операций). Современные системы часто делают такие оптимизации самостоятельно, но не факт, что на работе будет современная система и не факт, что такая система всегда работает идеально. 
 
 - https://habr.com/ru/companies/yandex/articles/721526/
+- https://habr.com/ru/companies/yandex/articles/312430/
 - https://habr.com/ru/companies/yandex/articles/311104/
 - https://medium.com/yandex/ytsaurus-exabyte-scale-storage-and-processing-system-is-now-open-source-42e7f5fa5fc6
 ![image](https://github.com/YHx07/pd-seminars/assets/36137274/58376b1a-a8e8-4d1d-b0c0-6309b2ef8697)
