@@ -16,7 +16,7 @@ https://hadoop.apache.org/docs/stable/hadoop-mapreduce-client/hadoop-mapreduce-c
 
 ## Пример на Java
 
-Смотрим код: `velkerr/seminars/pd2020/05_wordcount_java/src/ru/mipt/examples/WordCount.java`
+Смотрим код: `/home/velkerr/seminars/pd2020/05_wordcount_java/src/ru/mipt/examples/WordCount.java`
 
 Основной класс `public class WordCount extends Configured implements Tool {...}`:
 
