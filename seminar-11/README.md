@@ -4,7 +4,7 @@
 
 Как запустить Jupyter для запуска программ на PySpark:
 
-В [материалах](https://gitlab.com/fpmi-atp/pd2022a-supplementary/global/-/blob/main/materials/12-spark-rdd.md) заявляется, что порты 30000..30100 нашего Hadoop кластера открыты наружу. Если так, то
+В [материалах](https://gitlab.com/fpmi-atp/pd2022a-supplementary/global/-/blob/main/materials/12-spark-rdd.md) утверждаетя, что порты 30000..30100 нашего Hadoop кластера открыты наружу. Если так, то
 1. Заходим по shh на кластер под своим логином,
 2. Копируем из `/home/velkerr/seminars/pd2020/14-15-spark/05-spark-base_nb.ipynb` и `/home/velkerr/seminars/pd2020/14-15-spark/images` файлы к себе в директорию (можно без них, но с ними проще начать писать),
 3. Запускам команду в терминале (выбираем себе порт <PORT> (надо чтобы он не совпадал с кем-то другим; если что-то не работает, то попробуйте подобрать другой порт) и на месте количества экзекьютеров <N> пишем, например, 3; далее прям так пишем в терминале): `PYSPARK_DRIVER_PYTHON=jupyter PYSPARK_PYTHON=/usr/bin/python3 PYSPARK_DRIVER_PYTHON_OPTS='notebook --ip="*" --port=<PORT> --no-browser' pyspark2 --master=yarn --num-executors=<N>`
