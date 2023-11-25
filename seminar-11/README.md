@@ -2,7 +2,7 @@
 
 Все материалы есть тут: https://gitlab.com/fpmi-atp/pd2022a-supplementary/global/-/blob/main/materials/12-spark-rdd.md
 
-Как запустить Jupyter для запуска программ на PySpark:
+# Как запустить Jupyter для запуска программ на PySpark:
 
 В [материалах](https://gitlab.com/fpmi-atp/pd2022a-supplementary/global/-/blob/main/materials/12-spark-rdd.md) утверждаетя, что порты 30000..30100 нашего Hadoop кластера открыты наружу. Если так, то
 1. Заходим по shh на кластер под своим логином,
