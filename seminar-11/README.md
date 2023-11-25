@@ -11,6 +11,7 @@
 4. В браузере открываем `http://localhost:<PORT>` и вставяем токен (он напишется в терминале, когда запускаем Jupyter)
 
 У меня порт 30075 не открывался, поэтому я его все-таки пробросил при подключении к кластеру:
+`ssh hdfsuser@mipt-client.atp-fivt.org -L 30075:mipt-client.atp-fivt.org:30075`
 
 <img width="1046" alt="Screenshot 2023-11-25 at 10 41 35" src="https://github.com/YHx07/pd-seminars/assets/36137274/30f7f9c9-b7dd-4dd7-a3a0-629225ca15ff">
 
