@@ -2,6 +2,18 @@
 
 Все материалы есть тут: https://gitlab.com/fpmi-atp/pd2022a-supplementary/global/-/blob/main/materials/12-spark-rdd.md
 
+Как запустить Jupyter для запуска программ на PySpark:
+
+В [материалах](https://gitlab.com/fpmi-atp/pd2022a-supplementary/global/-/blob/main/materials/12-spark-rdd.md) заявляется, что порты 30000..30100 нашего Hadoop кластера открыты наружу. Если так, то
+1. Заходим по shh на кластер под своим логином,
+2. Копируем из `/home/velkerr/seminars/pd2020/14-15-spark/05-spark-base_nb.ipynb` и `/home/velkerr/seminars/pd2020/14-15-spark/images` файлы к себе в директорию (можно без них, но с ними проще начать писать),
+3. Запускам команду в терминале (выбираем себе порт <PORT> (надо чтобы он не совпадал с кем-то другим; если что-то не работает, то попробуйте подобрать другой порт) и на месте количества экзекьютеров <N> пишем, например, 3; далее прям так пишем в терминале): `PYSPARK_DRIVER_PYTHON=jupyter PYSPARK_PYTHON=/usr/bin/python3 PYSPARK_DRIVER_PYTHON_OPTS='notebook --ip="*" --port=<PORT> --no-browser' pyspark2 --master=yarn --num-executors=<N>`
+4. В браузере открываем http://localhost:<PORT> и вставяем токен (он напишется в терминале, когда запускаем Jupyter)
+
+У меня порт 30076 не работал, поэтому я его все-таки пробросил при подключении к кластеру:
+
+<img width="1046" alt="Screenshot 2023-11-25 at 10 41 35" src="https://github.com/YHx07/pd-seminars/assets/36137274/30f7f9c9-b7dd-4dd7-a3a0-629225ca15ff">
+
 # Spark
 
 Apache Spark - платформа параллельной обработки данных для исполнения крупномасштабных аналитических приложений на кластерах. Спарк может обрабатывать как пакетные данные (batch), так и данные в реальном времени (stream). Напомню, что в курсе были Hadoop Streaming, Hive Streaming и Spark Streaming -- несмотря на "Streaming" каждый из них решает свою задачу. Фреймворд Spark написал на Scala, имеет Python API, который называется PySpark.
