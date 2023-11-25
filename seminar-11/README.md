@@ -10,9 +10,13 @@
 3. Запускам команду в терминале (выбираем себе порт <PORT> (надо чтобы он не совпадал с кем-то другим; если что-то не работает, то попробуйте подобрать другой порт) и на месте количества экзекьютеров <N> пишем, например, 3; далее прям так пишем в терминале): `PYSPARK_DRIVER_PYTHON=jupyter PYSPARK_PYTHON=/usr/bin/python3 PYSPARK_DRIVER_PYTHON_OPTS='notebook --ip="*" --port=<PORT> --no-browser' pyspark2 --master=yarn --num-executors=<N>`
 4. В браузере открываем `http://localhost:<PORT>` и вставяем токен (он напишется в терминале, когда запускаем Jupyter)
 
-У меня порт 30076 не работал, поэтому я его все-таки пробросил при подключении к кластеру:
+У меня порт 30075 не открывался, поэтому я его все-таки пробросил при подключении к кластеру:
 
 <img width="1046" alt="Screenshot 2023-11-25 at 10 41 35" src="https://github.com/YHx07/pd-seminars/assets/36137274/30f7f9c9-b7dd-4dd7-a3a0-629225ca15ff">
+
+Вид Jupyter:
+
+<img width="1437" alt="Screenshot 2023-11-25 at 10 47 12" src="https://github.com/YHx07/pd-seminars/assets/36137274/9d6105e4-b254-4585-9920-0e75acf0aae5">
 
 # Spark
 
