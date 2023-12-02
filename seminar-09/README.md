@@ -9,9 +9,11 @@ https://gitlab.com/fpmi-atp/pd2022a-supplementary/global/-/blob/main/materials/1
 1. Заходим на кластер по shh, пробрасываем порт `-L 8888:mipt-node03:8888`
 2. В HUE заходим, например, как пользователь `hue_user`, пароль `hue_password`
 
-###
+---
 
-Архитектура Hive:
+..in progress...
+
+### Архитектура Hive:
 
 ![hive-architecture](https://github.com/YHx07/pd-seminars/assets/36137274/98df215d-97a6-4423-990b-1c359fa8d994)
 https://cloud.mail.ru/public/Shqp/ukAovqDPh
