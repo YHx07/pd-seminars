@@ -194,6 +194,7 @@ rdd.persist(storage_level)
 rdd.unpersist()
 ```
 
+
 ### Обработка отказов
 
 - Промежуточные результаты не сохраняются в HDFS
@@ -209,3 +210,10 @@ Broadcast объект — это неизменяемая переменная,
 *Map side join*
 
 Аналог DistributedCache в Hadoop. Обычно используется когда мы хотим в спарке сделать Map-side join (т.е. имеется 2 датасета: 1 маленький, который и добавляем в broadcast, другой большой).
+
+### Материалы
+
+1. https://sparkbyexamples.com/pyspark-tutorial/
+4. https://habr.com/ru/companies/avito/articles/732870/
+5. https://habr.com/ru/companies/avito/articles/740232/
+6. https://habr.com/ru/companies/avito/articles/764996/
