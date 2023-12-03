@@ -17,9 +17,11 @@ sc = SparkContext(conf=config)
 spark = SparkSession.builder.appName('Spark DF practice').master('yarn').getOrCreate()
 ```
 
-Эти команды создают Spark сессию. В [прошлом семинаре](https://github.com/YHx07/pd-seminars/blob/main/seminar-11/README.md) Spark сессия создавалась при выполнении команды `PYSPARK_DRIVER_PYTHON=jupyter PYSPARK_PYTHON=/usr/bin/python3 PYSPARK_DRIVER_PYTHON_OPTS='notebook --ip="*" --port=<PORT> --no-browser' pyspark2 --master=yarn --num-executors=<N>` -- вместе с запуском Jupyter Notebook поднималась Spark сессия.
+Эти команды создают Spark сессию. 
 
-В config `SparkConf().setAppName("spark_graph").setMaster("yarn")` есть установка `setMaster`, в данном случае написан `yarn` -- эта установка для запуска программы на Spark на клестере. Есть еще `local[1]` и прочие -- это для локального запуска.
+В [прошлом семинаре](https://github.com/YHx07/pd-seminars/blob/main/seminar-11/README.md) Spark сессия создавалась при выполнении команды `PYSPARK_DRIVER_PYTHON=jupyter PYSPARK_PYTHON=/usr/bin/python3 PYSPARK_DRIVER_PYTHON_OPTS='notebook --ip="*" --port=<PORT> --no-browser' pyspark2 --master=yarn --num-executors=<N>` -- вместе с запуском Jupyter Notebook поднималась Spark сессия.
+
+В config `SparkConf().setAppName("spark_graph").setMaster("yarn")` есть установка `setMaster`, в данном случае написан `yarn` -- эта установка для запуска программы на Spark на клестере. Есть еще `local[2]` и прочие -- это для локального запуска, параметр [2] задаёт количество ядер, выделенных на задачу.
 
 # PySpark. DataFrame
 
@@ -29,6 +31,13 @@ spark = SparkSession.builder.appName('Spark DF practice').master('yarn').getOrCr
 
 Источники данных: CSV, JSON, Hive, HBase, Cassandra,  MySQL, PostgreSQL, Parquet, ORC, Kafka, ElasticSearch, Amazon S3, ...
 
+Перезапустим Spark сессию. Сначала остановим:
+
+```python
+spark.stop()
+```
+
+Затем создадим Spark сессию:
 ```python
 import pyspark
 from pyspark.sql import SparkSession
@@ -54,72 +63,28 @@ AppName
 SparkByExamples.com
 ```
 
+Чтение в Dataframe:
+```python
+df = spark.read.csv('/data/twitter/twitter_sample_small.txt', sep='\t')
 ```
-df = spark.read.format('csv').option('sep', '|').load('/lectures/lecture02/data/ml-100k/u.user')
-df
-# DataFrame[_c0: string, _c1: string, _c2: string, _c3: string, _c4: string]
-df.show(4)
+
+Напечатаем содержимое:
+```python
+df.show(1)
 ```
 
 ```plain
-+---+---+---+----------+-----+
-|_c0|_c1|_c2|       _c3|  _c4|
-+---+---+---+----------+-----+
-|  1| 24|  M|technician|85711|
-|  2| 53|  F|     other|94043|
-|  3| 23|  M|    writer|32067|
-|  4| 24|  M|technician|43537|
-+---+---+---+----------+-----+
-only showing top 4 rows
++---+----+
+|_c0| _c1|
++---+----+
+| 12|2241|
++---+----+
+only showing top 1 row
 ```
 
-### Schema
-
-Чтобы задать тип колонок и названия воспользуемся schema
+При чтении Spark даёт названия колонкам, как показано выше. Назовём колонки по-своему:
 
 ```python
-from pyspark.sql.types import StructType, StructField, IntegerType, StringType
-
-schema = StructType(fields=[
-    StructField('user_id', IntegerType()),
-    StructField('age', IntegerType()),
-    StructField('gender', StringType()),
-    StructField('occupation', StringType()),
-    StructField('zip', IntegerType()),
-])
-
-df = spark.read.schema(schema).format('csv').option('sep', '|').load('/lectures/lecture02/data/ml-100k/u.user')
-df
-# DataFrame[user_id: int, age: int, gender: string, occupation: string, zip: int]
-df.printSchema()
-```
-
-```plain
-root
- |-- user_id: integer (nullable = true)
- |-- age: integer (nullable = true)
- |-- gender: string (nullable = true)
- |-- occupation: string (nullable = true)
- |-- zip: integer (nullable = true)
-```
-
-```python
-df.show(4)
-```
-
-```plain
-+-------+---+------+----------+-----+
-|user_id|age|gender|occupation|  zip|
-+-------+---+------+----------+-----+
-|      1| 24|     M|technician|85711|
-|      2| 53|     F|     other|94043|
-|      3| 23|     M|    writer|32067|
-|      4| 24|     M|technician|43537|
-+-------+---+------+----------+-----+
-only showing top 4 rows
-```
-
-```
 from pyspark.sql import functions as F
 
 df.select(
@@ -137,13 +102,18 @@ df.select(
 only showing top 1 row
 ```
 
+Выведим в стиле Pandas:
 ```
 df.toPandas()
 ```
 
 <img width="292" alt="Screenshot 2023-12-03 at 01 30 56" src="https://github.com/YHx07/pd-seminars/assets/36137274/c06a9bd2-d957-4b6a-badb-7602f670e920">
 
-```
+Метод `toPandas()` выгружает данные на клиент в оперативную память. Поэтому, делая такую операцию, нужно быть уверенным, что размер Dataframe позволяет выгружать его в оперативную память.
+
+С Dataframe можно работать как с таблицей Pandas:
+
+```python
 df.groupBy('source').count().show()
 ```
 
@@ -175,7 +145,9 @@ df.groupBy('source').count().show()
 only showing top 20 rows
 ```
 
-```
+С сортировкой:
+
+```python
 df.groupBy('source').count().orderBy(F.col('count').desc()).show()
 ```
 
@@ -207,14 +179,16 @@ df.groupBy('source').count().orderBy(F.col('count').desc()).show()
 only showing top 20 rows
 ```
 
-```
+Можно сделать группировку и несколько агрегаций:
+
+```python
 from pyspark.sql.functions import sum,avg,max,count
 
-df1 = df1.groupBy("source").agg(
+df = df.groupBy("source").agg(
     count("*").alias("count1"), 
     avg("source").alias("mean")
 )
-df1.show()
+df.show()
 ```
 
 ```plain
