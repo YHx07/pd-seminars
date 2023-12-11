@@ -221,6 +221,8 @@ only showing top 20 rows
 
 ### Spark Оптимизации
 
+https://habr.com/ru/companies/oleg-bunin/articles/768284/
+
 ![spark-optimization-1](https://github.com/YHx07/pd-seminars/assets/36137274/872fcbc1-441c-49c2-bce6-9b445bc764d8)
 ![spark-optimization-2](https://github.com/YHx07/pd-seminars/assets/36137274/97b17b4c-fef5-4910-9e2e-966aaaaa7de4)
 
