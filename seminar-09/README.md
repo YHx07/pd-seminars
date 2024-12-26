@@ -230,6 +230,19 @@ Order by — глобальная сортировка
 
 `TRANSFORM`: выбирает поле, кот. мы будем обрабатывать с помощью streaming.
 
+Как запускать.
+
+Варианта А:
+1. В директории лежат: task.sql, script.py
+2. вы пишите hive -f task.sql
+
+Вариант В:
+Если у вас скачет репозиторий с GitLab, то:
+1. В директории лежат: task.sql, script.py, run.sh
+2. В run.sh скрипт: hive -f task.sql
+2. Вы пишите bash run.sh
+
+Для запуска на GitLab в run.sh: hive -f task.sql + рядом с task.sql лежит файл script.py
 ### UDF
 
 - Regular UDF: обрабатываем вход построчно,
