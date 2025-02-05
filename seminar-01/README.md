@@ -130,7 +130,7 @@ int main(int argc, char** argv) {
 }
 ```
 
-Разбор кода посмотрим в https://gitlab.atp-fivt.org/courses-public/pd/global/-/blob/main/materials/01-MPI.md?ref_type=heads#разбор-hello_mpi
+Разбор кода посмотрим позже в https://gitlab.atp-fivt.org/courses-public/pd/global/-/blob/main/materials/01-MPI.md?ref_type=heads#разбор-hello_mpi . Сначала разберем, как его запускать
 
 ### Компиляция MPI программы на С/С++
 
