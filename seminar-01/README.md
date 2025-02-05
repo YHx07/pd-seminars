@@ -130,6 +130,8 @@ int main(int argc, char** argv) {
 }
 ```
 
+Разбор кода посмотрим в https://gitlab.atp-fivt.org/courses-public/pd/global/-/blob/main/materials/01-MPI.md?ref_type=heads#разбор-hello_mpi
+
 ### Компиляция MPI программы на С/С++
 
 Компиляция программ происходит при помощи компиляторов ```mpicc``` и ```mpic++```.
