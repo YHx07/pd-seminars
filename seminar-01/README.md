@@ -206,9 +206,9 @@ sbatch -n 4 --comment="Hello" run.sh
 
 Можно попробовать добавить настройки запуска джобы:
 
-``bash
+```bash
 #!/bin/bash
-#
+
 #SBATCH --ntasks=4 # суммарное кол-во процессов
 #SBATCH --ntasks-per-node=2 # Кол-во задач на процессор/машину
 #SBATCH --job-name=PD-12345Task # Имя задачи для очереди
