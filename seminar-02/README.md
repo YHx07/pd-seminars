@@ -111,11 +111,11 @@ MPI_Recv(
 
 19. ```MPI_Wtime()``` -  возвращает количество секунд, прошедшего с "некоторого" момента времени. С какого именно, решает компилятор. Известно только, что однажды зафиксировавшись, он остаётся неизменным для каждого потока.
 
-* [пример на команды 1-6](https://github.com/YHx07/pd-seminars/blob/main/seminar-01/code/00-hello-world/main.cpp)
-* [пример на команды 7-8](https://github.com/YHx07/pd-seminars/blob/main/seminar-01/code/01-send_recv/main.cpp)
-* [пример на команды 9](https://github.com/YHx07/pd-seminars/blob/main/seminar-01/code/05/main.cpp)
-* [пример на команды 11-12](https://github.com/YHx07/pd-seminars/blob/main/seminar-01/code/03-probe-message-status/probe.cpp)
-* [пример на команды 13-16](https://github.com/YHx07/pd-seminars/blob/main/seminar-01/code/04-isend-irecv/main.cpp)
+* [Пример на команды 1-6 на C++](https://github.com/YHx07/pd-seminars/blob/main/seminar-01/code/00-hello-world/main.cpp)
+* [Пример на команды 7-8 на C++](https://github.com/YHx07/pd-seminars/blob/main/seminar-01/code/01-send_recv/main.cpp)
+* [Пример на команды 9 на C++](https://github.com/YHx07/pd-seminars/blob/main/seminar-01/code/05/main.cpp)
+* [Пример на команды 11-12 на C++](https://github.com/YHx07/pd-seminars/blob/main/seminar-01/code/03-probe-message-status/probe.cpp)
+* [Пример на команды 13-16 на C++](https://github.com/YHx07/pd-seminars/blob/main/seminar-01/code/04-isend-irecv/main.cpp)
 
 Пример подсчёт времени работы `MPI_Wtime()`:
 ```c++
