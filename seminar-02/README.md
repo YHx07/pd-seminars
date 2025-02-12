@@ -10,7 +10,7 @@
 
 ### Напоминание запуск программ на кластере
 
-Локальный запуск на клиентской машине:
+#### Локальный запуск на клиентской машине:
 
 Вход на кластер
 
@@ -38,11 +38,7 @@ mpic++ <путь к исходнику>
 mpiexec ./a.out 2>/dev/null
 ```
 
-Количество запущенных процессов оказалось равным количеству физических ядер компьютера. По умолчанию mpiexec запускается локально на всех возможных ядрах (можно проверить сколько их -nproc). Для ограничения этого можно запустить mpiexec -np <колчиество процессов>.
-
-P.S. mpiexec и mpirun на практике работают одинаково.
-
-Параллельный запуск с использованием нескольких машин кластера с помощью SLURM
+#### Параллельный запуск с использованием нескольких машин кластера с помощью SLURM
 
 Готовим файл run.sh:
 ```[bash]
@@ -56,9 +52,7 @@ mpiexec ./a.out
 sbatch -n 4 --comment="Hello" run.sh
 ```
 
-### 
-
-### Еще про команды в MPI:
+### Команды в MPI:
 
 #### Общее:
 
@@ -101,9 +95,8 @@ MPI_Recv(
 10. Чтобы понять от кого пришло сообщение существует переменная status. По сути это структура с таким содержимым:
 * Status.MPI_SOURCE
 * Status.MPI_TAG
-11. `MPI_Get_count (MPI_Status*, MPI_Type, int*)` - получает из статуса сообщения требуемое количество элементов нужного типа и записывает его в последний аргумент. Однако тогда вопрос, как нам получить status до получения самого сообщения?
-
-12. `MPI_Probe (int source, int tag, MPI_comm comm, *status )` - записывает данные о следующем сообщении с тегом tag от процесса source в переменную status. При этом само сообщение считается не прочитанным и его можно прочитать уже зная параметры. Или даже сделать ещё раз Probe (правда не понятно зачем).
+11. `MPI_Get_count (MPI_Status*, MPI_Type, int*)` - получает из статуса сообщения требуемое количество элементов нужного типа и записывает его в последний аргумент.
+12. `MPI_Probe (int source, int tag, MPI_comm comm, *status )` - записывает данные о следующем сообщении с тегом tag от процесса source в переменную status. При этом само сообщение считается не прочитанным и его можно прочитать уже зная параметры.
 
 #### Асинхронность 
 
@@ -114,10 +107,60 @@ MPI_Recv(
 17. ```MPI_Test (&request, bool &flag, &status)``` - не блокирующая функция ожидания. Опрашивает, не пришло ли ещё сообщение, и результат записывает в переменную flag. Если сообщение пришло, то параметры сообщения записываются в status
 18. ```MPI_Wtime()``` -  возвращает количество секунд, прошедшего с "некоторого" момента времени. С какого именно, решает компилятор. Известно только, что однажды зафиксировавшись, он остаётся неизменным для каждого потока.
 
-* [пример 7-8](https://github.com/YHx07/pd-seminars/blob/main/seminar-01/code/01-send_recv/main.cpp)
-* [пример 9](https://github.com/YHx07/pd-seminars/blob/main/seminar-01/code/05/main.cpp)
-* [пример 11-12](https://github.com/YHx07/pd-seminars/blob/main/seminar-01/code/03-probe-message-status/probe.cpp)
-* [пример 13-16](https://github.com/YHx07/pd-seminars/blob/main/seminar-01/code/04-isend-irecv/main.cpp)
+* [пример на команды 1-6](https://github.com/YHx07/pd-seminars/blob/main/seminar-01/code/00-hello-world/main.cpp)
+* [пример на команды 7-8](https://github.com/YHx07/pd-seminars/blob/main/seminar-01/code/01-send_recv/main.cpp)
+* [пример на команды 9](https://github.com/YHx07/pd-seminars/blob/main/seminar-01/code/05/main.cpp)
+* [пример на команды 11-12](https://github.com/YHx07/pd-seminars/blob/main/seminar-01/code/03-probe-message-status/probe.cpp)
+* [пример на команды 13-16](https://github.com/YHx07/pd-seminars/blob/main/seminar-01/code/04-isend-irecv/main.cpp)
+
+Пример подсчёт времени работы `MPI_Wtime()`:
+```c++
+#include <mpi.h>
+#include <iostream>
+#include <unistd.h>
+
+int calc (size_t num_of_elements)
+{
+    int res = 0;
+    for (size_t i = 0 ; i < num_of_elements; i++)
+    {
+        res += (i*i) % 1000000000;
+        res %= 1000000000;
+    }
+    return res;
+}
+
+int main(int argc, char** argv) {
+    
+    MPI_Init(&argc, &argv);
+
+    int world_size;
+    MPI_Comm_size(MPI_COMM_WORLD, &world_size);
+
+    int world_rank;
+
+    MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
+    
+    size_t nums = 100'000'000;
+    double start = 0;
+    double end = 0;
+    start = MPI_Wtime ();
+    int res = calc (nums);
+    end = MPI_Wtime ();
+
+    std::cout << res << "  " << end - start << std::endl;
+
+    MPI_Finalize();
+
+    start = MPI_Wtime ();
+    res = calc (nums);
+    end = MPI_Wtime ();
+
+    std::cout << res << "  " << end - start << std::endl;
+    return 0;
+}
+
+```
 
 [Можно ещё раз пересмотреть в другом источнике](https://gitlab.com/fpmi-atp/pd2022s-supplementary/chernetskiy/-/blob/main/Seminar_1_MPI.md)
 
