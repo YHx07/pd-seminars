@@ -259,12 +259,12 @@ docker exec -t "${CONTAINER_NAME}" apt-get install -y \
 
 `docker exec -it pd-mpi /bin/bash`
 
-#### Запуск программ
+#### Запуск программ (проверить)
 
 1. `mpic++ main.cpp `
 2. `mpiexec -np 4 --allow-run-as-root ./a.out`
 
-#### Запуск программ с make
+#### Запуск программ с make (проверить)
 
 1. `cmake . `
 2. `make -j9`
