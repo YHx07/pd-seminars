@@ -243,6 +243,8 @@ OpenMP можно запускать на своей машине, обычно 
 1. ```gcc -fopenmp main.c``` / ```g++ -fopenmp main.c```
 2. ```./a.out```
 
+Флаг fopenmp нужен для подключения необходимых библиотек
+
 #### Запуск программы через cmake:
 
 Заходим папку с `CMakeLists.txt` файлом, далее:
@@ -253,6 +255,38 @@ OpenMP можно запускать на своей машине, обычно 
 
 #### Примеры программ:
 
+```c
+#include<stdio.h>
+#include<stdlib.h>
+#include<omp.h>          //   заголовочный файл OpenMP
+
+int main(int argc, char* argv[])
+{
+#ifdef    _OPENMP
+    printf("OpenMP is supported! %d \n", _OPENMP);
+#endif
+    int a = 0, i = 1;
+    int myid, num_procs, num_threads;
+
+    num_procs = omp_get_num_procs();      //   получение количества доступных вычислительных ядер
+    printf("Num of processors = %d \n", num_procs);
+    
+    omp_set_num_threads(2);     //  явное задание количества потоков
+
+    num_threads = omp_get_num_threads();     //   получение количества работающих потоков
+    printf("Number of threads  = %d \n\n", num_threads);
+
+    myid = omp_get_thread_num();   //   получение номера потока
+    printf("Consecutive part 1, myid = %d\n", myid);
+    
+#pragma omp parallel shared(a)  private(myid, i)
+    {//   начало параллельной части программы
+        printf("i= %d \n", a);
+        myid = omp_get_thread_num();
+        printf("Parallel part, myid = %d\n", myid);
+    }//   конец параллельной части программы 
+} 
+```
 
 ---
 
