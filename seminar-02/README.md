@@ -144,7 +144,7 @@ int main(int argc, char** argv) {
 
     MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
     
-    size_t nums = 100'000'000;
+    size_t nums = 100000000;
     double start = 0;
     double end = 0;
     start = MPI_Wtime ();
