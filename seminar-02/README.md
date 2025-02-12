@@ -255,6 +255,8 @@ OpenMP можно запускать на своей машине, обычно 
 
 #### Примеры программ:
 
+Более подробно разобрано в https://gitlab.com/fpmi-atp/pd2022s-supplementary/chernetskiy/-/blob/main/Seminar_2_OpenMP.md
+
 ```c
 #include<stdio.h>
 #include<stdlib.h>
