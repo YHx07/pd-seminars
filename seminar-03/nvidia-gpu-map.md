@@ -8,6 +8,8 @@
 
 Можно изучить GPU Specs Database: https://www.techpowerup.com/gpu-specs/
 
+Видеокарты на нашем кластере можно посмотреть с помощью команды `nvidia-smi`, на данный момент это [NVIDIA GeForce RTX 2080 Ti](https://www.techpowerup.com/gpu-specs/geforce-rtx-2080-ti.c3305)
+
 ## Линейки
 
 ### GeForce
