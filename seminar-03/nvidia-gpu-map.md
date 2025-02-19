@@ -6,6 +6,8 @@
 
 # Классификация видеокарт
 
+Можно изучить GPU Specs Database: https://www.techpowerup.com/gpu-specs/
+
 ## Линейки
 
 ### GeForce
