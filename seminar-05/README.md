@@ -18,7 +18,7 @@
 8. Scan. Уберем data-race. Bank conflict. `/05-scan/correct_scan.cu`.
 9. Scan. Решение bank conflict-а. `/05-scan/scan_bank_conflicts.cu`.
 
-..to be done
+..scan to be done
 
 # CUDA - 3
 
@@ -278,7 +278,7 @@ nvcc main.cu
 
 Буст не большой. Вообще так как shared memory -- быстрая память, то параллельное простаивание в shared memory менее заметно, чем в global memery.
 
-#### Хаки
+#### Ускорение №1
 
 /04-reduction/03-improving-bank-conflicts. Количество блоков меньше в 2 раза (ILP = 2), shared data формируется по-другому: первое сложение осуществляем на global памяти, а не на shared памяти:
 
@@ -320,6 +320,7 @@ nvcc main.cu
 0.412192 elapsed
 4194304
 ```
+#### Ускорение №2
 
 /04-reduction/05-warp-reduce. Разворачиваем цикл. 
 
@@ -378,6 +379,8 @@ nvcc main.cu
 ```
 
 Работает примерно так же, но кажется скорость стала более устойчивая.
+
+#### Ускорение №3
 
 /04-reduction/06-warp-design-specific. Сдвиг по маске внутри warp-а:
 
@@ -516,7 +519,7 @@ nvcc correct_scan.cu
 0-й поток вычисляет 15+31
 16-й поток вычисляет 32+33
 
-#### Решение: Пропускаем каждый 32-й элемент массива
+#### Решение банк конфликта: Пропускаем каждый 32-й элемент массива
 
 05-scan/scan_bank_conflicts.cu
 
