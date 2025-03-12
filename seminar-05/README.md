@@ -635,12 +635,9 @@ int main(int argc, char** argv) {
 	float* d_y;
 	float* d_res;
 	
-	cudaMalloc(...);
-	cudaMalloc(...);
-	cudaMalloc(...);
+	cudaMalloc(...); # Сколько переменных на GPU?
 	
-	сudaMemcpy(...);
-	сudaMemcpy(...);
+	сudaMemcpy(...); # Сколько переменных копируем с CPU на GPU?
 	
 	cudaEvent_t start;
 	cudaEvent_t stop;
@@ -656,7 +653,7 @@ int main(int argc, char** argv) {
 	
 	cudaEventRecord(stop);
 	
-	cudaMemcpy(...);
+	cudaMemcpy(...); # Сколько переменных копируем с GPU на CPU?
 	
 	float elapsed = 0;
 	cudaEventElapsedTime(&elapsed, start, stop);
