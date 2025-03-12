@@ -586,7 +586,9 @@ __global__ void Filter(float* array, int numElements, OperationFilterType type, 
 └── .gitlab-ci.yml         	# Конфигурация CI/CD\
 ```
 
-#### Пример `KernelAdd.cu`.
+#### Пример задачи 1
+
+#####`KernelAdd.cu`.
 
 Обратите внимание на код: 
 - https://github.com/YHx07/pd-seminars/blob/main/seminar-03/README.md#03-add-blocks 
@@ -605,7 +607,7 @@ __global__ void KernelAdd(int numElements, float* x, float* y, float* result) {
  }
 }
 ```
-#### 01-add.cu
+##### 01-add.cu
 
 ```
 #include "KernelAdd.cuh"
@@ -669,7 +671,11 @@ int main(int argc, char** argv) {
 }
 ```
 
-Далее из папки `task2_cuda` запускаем команду: `cmake .`. Видим сообщение:
+##### Про cmake
+
+В шаблоке в папке task2_cuda уже лежит CMakeLists.txt
+
+Из папки `task2_cuda` запускаем команду: `cmake .`. Видим сообщение:
 ```shell
 -- The CUDA compiler identification is NVIDIA 12.2.128
 -- The CXX compiler identification is GNU 11.4.0
