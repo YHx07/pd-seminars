@@ -578,9 +578,13 @@ __global__ void Filter(float* array, int numElements, OperationFilterType type, 
 │   ├── ScalarMul.cu         	# Скалярное умножение
 │   └── ScalarMulRunner.cu   	# Запуск скалярного умножения
 ├── include/                  	# Заголовочные файлы (.cuh), их менять не нужно
+│   ├── KernelAdd.cuh		# Заголовочный файл для `KernelAdd.cu`. Программа `01-add.cu` использует `KernelAdd.cuh`, который использует `KernelAdd.cu`
 │   └── [Соответствующие .cuh файлы для каждого .cu]
 ├── tests/                   	# Директория с тестами
 ├── runners/                 	# Запускающие скрипты
+│   ├── 01-add.cu      		# Инициализация переменных, перемещение переменных на GPU, применение `KernelAdd.cu` к переменным
+│   ├── 02-mul.cu
+│   ├── ...
 ├── file.ipynb     		# Jupyter notebook для визуализации (нужно добавить)
 ├── CMakeLists.txt         	# Конфигурация сборки CMake
 └── .gitlab-ci.yml         	# Конфигурация CI/CD\
@@ -588,7 +592,7 @@ __global__ void Filter(float* array, int numElements, OperationFilterType type, 
 
 #### Пример задачи 1
 
-#####`KernelAdd.cu`.
+##### Функция `KernelAdd.cu`
 
 Обратите внимание на код: 
 - https://github.com/YHx07/pd-seminars/blob/main/seminar-03/README.md#03-add-blocks 
@@ -607,7 +611,7 @@ __global__ void KernelAdd(int numElements, float* x, float* y, float* result) {
  }
 }
 ```
-##### 01-add.cu
+##### Основная часть программы: `01-add.cu`
 
 ```
 #include "KernelAdd.cuh"
