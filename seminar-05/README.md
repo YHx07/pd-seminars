@@ -616,7 +616,7 @@ __global__ void KernelAdd(int numElements, float* x, float* y, float* result) {
 int main(int argc, char** argv) {
 	
 	int SIZE = ...;
-	int BLOCK_DIM = ...;
+	int BLOCK_DIM = ...;	
 	int GRID_DIM = (SIZE + BLOCK_DIM - 1) / BLOCK_DIM;
 	
 	float* h_x = new float[SIZE];
@@ -649,7 +649,7 @@ int main(int argc, char** argv) {
 	
 	KernelAdd<<<..., ...>>>(...);
 	
-	# cudaDeviceSynchronize();
+	# cudaDeviceSynchronize(); # Нужно ли?
 	
 	cudaEventRecord(stop);
 	
@@ -670,3 +670,71 @@ int main(int argc, char** argv) {
 			
 }
 ```
+
+Далее из папки `task2_cuda` запускаем команду: `cmake .`. Видим сообщение:
+```shell
+-- The CUDA compiler identification is NVIDIA 12.2.128
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda-12.2/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (2.9s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/pavlovdm/global/homeworks/templates/task2_cuda
+```
+
+Далее из той же папки запускаем команду `make`. Видим сообщение:
+```shell
+[  3%] Building CUDA object CMakeFiles/common_kernels.dir/src/CommonKernels.cu.o
+[  6%] Linking CUDA static library libcommon_kernels.a
+[  6%] Built target common_kernels
+[ 10%] Building CUDA object CMakeFiles/01-add.dir/runners/01-add.cu.o
+[ 13%] Building CUDA object CMakeFiles/01-add.dir/src/KernelAdd.cu.o
+[ 17%] Linking CUDA executable 01-add
+[ 17%] Built target 01-add
+[ 20%] Building CUDA object CMakeFiles/02-mul.dir/runners/02-mul.cu.o
+[ 24%] Building CUDA object CMakeFiles/02-mul.dir/src/KernelMul.cu.o
+[ 27%] Linking CUDA executable 02-mul
+[ 27%] Built target 02-mul
+[ 31%] Building CUDA object CMakeFiles/03-matrix-add.dir/runners/03-matrix-add.cu.o
+[ 34%] Building CUDA object CMakeFiles/03-matrix-add.dir/src/KernelMatrixAdd.cu.o
+[ 37%] Linking CUDA executable 03-matrix-add
+[ 37%] Built target 03-matrix-add
+[ 41%] Building CUDA object CMakeFiles/04-matrix-vector-mul.dir/runners/04-matrix-vector-mul.cu.o
+[ 44%] Building CUDA object CMakeFiles/04-matrix-vector-mul.dir/src/MatrixVectorMul.cu.o
+[ 48%] Linking CUDA executable 04-matrix-vector-mul
+[ 48%] Built target 04-matrix-vector-mul
+[ 51%] Building CUDA object CMakeFiles/05-scalar-mul.dir/runners/05-scalar-mul.cu.o
+[ 55%] Building CUDA object CMakeFiles/05-scalar-mul.dir/src/ScalarMulRunner.cu.o
+[ 58%] Building CUDA object CMakeFiles/05-scalar-mul.dir/src/ScalarMul.cu.o
+[ 62%] Linking CUDA executable 05-scalar-mul
+[ 62%] Built target 05-scalar-mul
+[ 65%] Building CUDA object CMakeFiles/06-cosine-vector.dir/runners/06-cosine-vector.cu.o
+[ 68%] Building CUDA object CMakeFiles/06-cosine-vector.dir/src/CosineVector.cu.o
+[ 72%] Building CUDA object CMakeFiles/06-cosine-vector.dir/src/ScalarMulRunner.cu.o
+[ 75%] Building CUDA object CMakeFiles/06-cosine-vector.dir/src/ScalarMul.cu.o
+[ 79%] Linking CUDA executable 06-cosine-vector
+[ 79%] Built target 06-cosine-vector
+[ 82%] Building CUDA object CMakeFiles/07-matrix-mul.dir/runners/07-matrix-mul.cu.o
+[ 86%] Building CUDA object CMakeFiles/07-matrix-mul.dir/src/MatrixMul.cu.o
+[ 89%] Linking CUDA executable 07-matrix-mul
+[ 89%] Built target 07-matrix-mul
+[ 93%] Building CUDA object CMakeFiles/08-filter.dir/runners/08-filter.cu.o
+[ 96%] Building CUDA object CMakeFiles/08-filter.dir/src/Filter.cu.o
+[100%] Linking CUDA executable 08-filter
+[100%] Built target 08-filter
+```
+
+У нас появляются в папке `task2_cuda` файлы:
+```shell
+01-add  03-matrix-add         05-scalar-mul     07-matrix-mul  02-mul  04-matrix-vector-mul  06-cosine-vector  08-filter
+```
+
+Их запускаем примерно: `./01-add 123 456` (передаем параметры)
