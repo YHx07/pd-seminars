@@ -585,3 +585,18 @@ __global__ void Filter(float* array, int numElements, OperationFilterType type, 
 ├── CMakeLists.txt         	# Конфигурация сборки CMake
 └── .gitlab-ci.yml         	# Конфигурация CI/CD\
 ```
+Пример `KernelAdd.cu`:
+
+```cu
+#include "KernelAdd.cuh"
+
+__global__ void KernelAdd(int numElements, float* x, float* y, float* result) {
+ 
+ int start = ...;
+ int step = ...;
+ 
+ for ... {
+  result[i] = x[i] + y[i];
+ }
+}
+```
