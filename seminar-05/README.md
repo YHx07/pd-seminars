@@ -566,7 +566,7 @@ __global__ void Filter(float* array, int numElements, OperationFilterType type, 
 Шаблон по ссылке: https://gitlab.atp-fivt.org/courses-public/pd/global/-/tree/main/homeworks/templates/task2_cuda
 
 ```md
-├── src/                      	# Исходный код CUDA
+├── src/                      	# Код CUDA -- файлы в этой папке редактируем
 │   ├── CommonKernels.cu      	# Общие ядра CUDA
 │   ├── CosineVector.cu       	# Вычисление косинусного расстояния
 │   ├── Filter.cu            	# Фильтрация
@@ -577,7 +577,7 @@ __global__ void Filter(float* array, int numElements, OperationFilterType type, 
 │   ├── MatrixVectorMul.cu   	# Умножение матрицы на вектор
 │   ├── ScalarMul.cu         	# Скалярное умножение
 │   └── ScalarMulRunner.cu   	# Запуск скалярного умножения
-├── include/                  	# Заголовочные файлы (.cuh)
+├── include/                  	# Заголовочные файлы (.cuh), их менять не нужно
 │   └── [Соответствующие .cuh файлы для каждого .cu]
 ├── tests/                   	# Директория с тестами
 ├── runners/                 	# Запускающие скрипты
