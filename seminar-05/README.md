@@ -588,7 +588,9 @@ __global__ void Filter(float* array, int numElements, OperationFilterType type, 
 
 #### Пример `KernelAdd.cu`.
 
-Обратите внимание на код: https://github.com/YHx07/pd-seminars/blob/main/seminar-03/README.md#03-add-blocks
+Обратите внимание на код: 
+- https://github.com/YHx07/pd-seminars/blob/main/seminar-03/README.md#03-add-blocks 
+- https://github.com/YHx07/pd-seminars/blob/main/seminar-03/README.md#04-memcpy (вспомните, почему в плане работы с памятью этот вариант был лучше 03-add-blocks?)
 
 ```cu
 #include "KernelAdd.cuh"
