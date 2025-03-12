@@ -568,15 +568,15 @@ __global__ void Filter(float* array, int numElements, OperationFilterType type, 
 ```md
 ├── src/                      	# Код CUDA, __файлы в этой папке редактируем__
 │   ├── CommonKernels.cu      	# Общие ядра CUDA
-│   ├── CosineVector.cu       	# Вычисление косинусного расстояния
+│   ├── CosineVector.cu       	# Ядро для вычисления косинусного расстояния
 │   ├── Filter.cu            	# Фильтрация
-│   ├── KernelAdd.cu         	# Ядро сложения
-│   ├── KernelMatrixAdd.cu   	# Ядро сложения матриц
-│   ├── KernelMul.cu         	# Ядро умножения
-│   ├── MatrixMul.cu         	# Умножение матриц
-│   ├── MatrixVectorMul.cu   	# Умножение матрицы на вектор
-│   ├── ScalarMul.cu         	# Скалярное умножение
-│   └── ScalarMulRunner.cu   	# Запуск скалярного умножения
+│   ├── KernelAdd.cu         	# Ядро для сложения
+│   ├── KernelMatrixAdd.cu   	# Ядро для сложения матриц
+│   ├── KernelMul.cu         	# Ядро для умножения
+│   ├── MatrixMul.cu         	# Ядро для умножения матриц
+│   ├── MatrixVectorMul.cu   	# Ядро для умножения матрицы на вектор
+│   ├── ScalarMul.cu         	# Ядро для скалярного умножения
+│   └── ScalarMulRunner.cu   	# 
 ├── include/                  	# Заголовочные файлы (.cuh), __их менять не нужно__
 │   ├── KernelAdd.cuh		# Заголовочный файл для `KernelAdd.cu`. Программа `01-add.cu` использует `KernelAdd.cuh`, который использует `KernelAdd.cu`
 │   └── ... 			# Соответствующие .cuh файлы для каждого .cu (которые лежат в `src/`)
