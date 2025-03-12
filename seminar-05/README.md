@@ -650,13 +650,13 @@ int main(int argc, char** argv) {
 	
 	cudaEventRecord(start);
 	
-	KernelAdd<<<...>>>(...);
+	KernelAdd<<<..., ...>>>(...);
 	
 	# cudaDeviceSynchronize();
 	
 	cudaEventRecord(stop);
 	
-	cudaMemcpy(h_res, d_res, SIZE * sizeof(float), cudaMemcpyDeviceToHost);
+	cudaMemcpy(...);
 	
 	float elapsed = 0;
 	cudaEventElapsedTime(&elapsed, start, stop);
