@@ -586,7 +586,7 @@ __global__ void Filter(float* array, int numElements, OperationFilterType type, 
 └── .gitlab-ci.yml         	# Конфигурация CI/CD\
 ```
 Пример `KernelAdd.cu`:
-
+Обратите внимание на код: https://github.com/YHx07/pd-seminars/blob/main/seminar-03/README.md#03-add-blocks
 ```cu
 #include "KernelAdd.cuh"
 
