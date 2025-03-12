@@ -564,3 +564,24 @@ __global__ void Filter(float* array, int numElements, OperationFilterType type, 
 Для каждой операции необходимо будет построить графики зависимости времени вычисления от размера вектора и размера блока. Время работы ядра замеряем посредством библиотеки CUDA (через CUDA Events)
 
 Шаблон по ссылке: https://gitlab.atp-fivt.org/courses-public/pd/global/-/tree/main/homeworks/templates/task2_cuda
+
+```md
+├── src/                      	# Исходный код CUDA
+│   ├── CommonKernels.cu      	# Общие ядра CUDA
+│   ├── CosineVector.cu       	# Вычисление косинусного расстояния
+│   ├── Filter.cu            	# Фильтрация
+│   ├── KernelAdd.cu         	# Ядро сложения
+│   ├── KernelMatrixAdd.cu   	# Ядро сложения матриц
+│   ├── KernelMul.cu         	# Ядро умножения
+│   ├── MatrixMul.cu         	# Умножение матриц
+│   ├── MatrixVectorMul.cu   	# Умножение матрицы на вектор
+│   ├── ScalarMul.cu         	# Скалярное умножение
+│   └── ScalarMulRunner.cu   	# Запуск скалярного умножения
+├── include/                  	# Заголовочные файлы (.cuh)
+│   └── [Соответствующие .cuh файлы для каждого .cu]
+├── tests/                   	# Директория с тестами
+├── runners/                 	# Запускающие скрипты
+├── file.ipynb     		# Jupyter notebook для визуализации (нужно добавить)
+├── CMakeLists.txt         	# Конфигурация сборки CMake
+└── .gitlab-ci.yml         	# Конфигурация CI/CD\
+```
