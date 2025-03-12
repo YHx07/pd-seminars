@@ -566,7 +566,7 @@ __global__ void Filter(float* array, int numElements, OperationFilterType type, 
 Шаблон по ссылке: https://gitlab.atp-fivt.org/courses-public/pd/global/-/tree/main/homeworks/templates/task2_cuda
 
 ```md
-├── src/                      	# Код CUDA -- файлы в этой папке редактируем
+├── src/                      	# Код CUDA, __файлы в этой папке редактируем__
 │   ├── CommonKernels.cu      	# Общие ядра CUDA
 │   ├── CosineVector.cu       	# Вычисление косинусного расстояния
 │   ├── Filter.cu            	# Фильтрация
@@ -577,17 +577,17 @@ __global__ void Filter(float* array, int numElements, OperationFilterType type, 
 │   ├── MatrixVectorMul.cu   	# Умножение матрицы на вектор
 │   ├── ScalarMul.cu         	# Скалярное умножение
 │   └── ScalarMulRunner.cu   	# Запуск скалярного умножения
-├── include/                  	# Заголовочные файлы (.cuh), их менять не нужно
+├── include/                  	# Заголовочные файлы (.cuh), __их менять не нужно__
 │   ├── KernelAdd.cuh		# Заголовочный файл для `KernelAdd.cu`. Программа `01-add.cu` использует `KernelAdd.cuh`, который использует `KernelAdd.cu`
 │   └── ... 			# Соответствующие .cuh файлы для каждого .cu (которые лежат в `src/`)
 ├── tests/                   	# Директория с тестами
-├── runners/                 	# Запускающие скрипты
+├── runners/                 	# Запускающие скрипты, __нужно реализовать самостоятельно__
 │   ├── 01-add.cu      		# Инициализация переменных, перемещение переменных на GPU, применение `KernelAdd.cu` к переменным
 │   ├── 02-mul.cu
 │   └── ...			# Всего 8 задач, поэтому 8 файлов
 ├── file.ipynb     		# Jupyter notebook для визуализации (нужно добавить)
 ├── CMakeLists.txt         	# Конфигурация сборки CMake
-└── .gitlab-ci.yml         	# Конфигурация CI/CD\
+└── .gitlab-ci.yml         	# Конфигурация CI/CD
 ```
 
 #### Пример задачи 1
