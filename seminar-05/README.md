@@ -735,4 +735,4 @@ int main(int argc, char** argv) {
 01-add 03-matrix-add 05-scalar-mul 07-matrix-mul 02-mul 04-matrix-vector-mul 06-cosine-vector 08-filter
 ```
 
-Их запускаем примерно: `./01-add 123 456` (передаем параметры)
+Их запускаем примерно следующей командой (зависит от вашей реализации): `./01-add 123 456` (передаем параметры)
