@@ -603,3 +603,76 @@ __global__ void KernelAdd(int numElements, float* x, float* y, float* result) {
  }
 }
 ```
+#### 01-add.cu
+
+```
+#include "KernelAdd.cuh"
+
+#include <iostream>
+#include <cassert>
+
+int main(int argc, char** argv) {
+	
+	int SIZE = ;
+	int BLOCK_DIM = ;
+	int GRID_DIM = (SIZE + BLOCK_DIM - 1) / BLOCK_DIM;
+	
+	float* h_x = new float[SIZE];
+	float* h_y = new float[SIZE];
+	float* h_res = new float[SIZE];
+	
+	for (int i = 0; i < SIZE; ++i) {
+		h_x[i] = 2 * i;
+	}
+	
+	for (int i = 0; i < SIZE; ++i) {
+		h_y[i] = -i;
+	}
+	
+	float* d_x;
+	float* d_y;
+	float* d_res;
+	
+	cudaMalloc(...);
+	cudaMalloc(...);
+	cudaMalloc(...);
+	
+	...
+	...
+	
+	cudaEvent_t start;
+	cudaEvent_t stop;
+	
+	cudaEventCreate(&start);
+	cudaEventCreate(&stop);
+	
+	cudaEventRecord(start);
+	
+	KernelAdd<<<...>>>(...);
+	
+	cudaDeviceSynchronize();
+	
+	cudaEventRecord(stop);
+	
+	cudaMemcpy(h_res, d_res, SIZE * sizeof(float), cudaMemcpyDeviceToHost);
+	  
+	float eps = 0.1;
+	for (int i = 0; i < min(10'000, SIZE); ++i) {
+		assert(h_res[i] >= (h_x[i] + h_y[i]) * (1. - eps) && h_res[i] <= (h_x[i] + h_y[i]) * (1. + eps));
+	}
+	
+	float elapsed = 0;
+	cudaEventElapsedTime(&elapsed, start, stop);
+	
+	std::cout << "Time : " << elapsed << " for size = " << SIZE << '\n';
+	
+	delete[] h_x;
+	delete[] h_y;
+	delete[] h_res;
+	
+	cudaFree(d_x);
+	cudaFree(d_y);
+	cudaFree(d_res);
+			
+}
+```
