@@ -579,7 +579,7 @@ __global__ void Filter(float* array, int numElements, OperationFilterType type, 
 │   └── ScalarMulRunner.cu   	# Запуск скалярного умножения
 ├── include/                  	# Заголовочные файлы (.cuh), их менять не нужно
 │   ├── KernelAdd.cuh		# Заголовочный файл для `KernelAdd.cu`. Программа `01-add.cu` использует `KernelAdd.cuh`, который использует `KernelAdd.cu`
-│   └── [Соответствующие .cuh файлы для каждого .cu]
+│   └── ... 			# Соответствующие .cuh файлы для каждого .cu (которые лежат в `src/`)
 ├── tests/                   	# Директория с тестами
 ├── runners/                 	# Запускающие скрипты
 │   ├── 01-add.cu      		# Инициализация переменных, перемещение переменных на GPU, применение `KernelAdd.cu` к переменным
