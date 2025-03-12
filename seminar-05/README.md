@@ -35,7 +35,7 @@
 
 #### Наивный алгоритм
 
-/04-reduction/01-default-sum
+`/04-reduction/01-default-sum`
 
 Проведем подсчет внутри блока таким образом: 
 
@@ -107,7 +107,7 @@ nvcc main.cu
 
 #### Уменьшим количество warp-итераций (изменена нумерация потоков):
 
-/04-reduction/02-another-math
+`/04-reduction/02-another-math`
 
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/36137274/197417851-2880802a-2007-4534-b887-4ddb4638615a.png">
 
@@ -201,7 +201,7 @@ tid | i   | i + s
 
 #### Решим bank conflict:
 
-04-reduction/03-improving-bank-conflicts
+`04-reduction/03-improving-bank-conflicts`
 
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/36137274/197418586-6b3c409c-90b4-4c5f-b1d1-52245215b9c5.png">
 
@@ -280,7 +280,7 @@ nvcc main.cu
 
 #### Ускорение №1
 
-/04-reduction/03-improving-bank-conflicts. Количество блоков меньше в 2 раза (ILP = 2), shared data формируется по-другому: первое сложение осуществляем на global памяти, а не на shared памяти:
+`/04-reduction/03-improving-bank-conflicts`. Количество блоков меньше в 2 раза (ILP = 2), shared data формируется по-другому: первое сложение осуществляем на global памяти, а не на shared памяти:
 
 ```
 __global__ void Reduce(int* in_data, int* out_data) {
@@ -322,7 +322,7 @@ nvcc main.cu
 ```
 #### Ускорение №2
 
-/04-reduction/05-warp-reduce. Разворачиваем цикл. 
+`/04-reduction/05-warp-reduce`. Разворачиваем цикл. 
 
 Когда один warp, то писать цикл `for` не нужно. Просто `A[i] += A[i+32]; A[i] += A[i+16]; A[i] += A[i+8];..`:
 
@@ -382,7 +382,7 @@ nvcc main.cu
 
 #### Ускорение №3
 
-/04-reduction/06-warp-design-specific. Сдвиг по маске внутри warp-а:
+`/04-reduction/06-warp-design-specific`. Сдвиг по маске внутри warp-а:
 
 `__shfl_down_sync(mask, val, offset)`:
  0 | 1 | 2 | 3 |...|30 |31
@@ -456,7 +456,7 @@ https://developer.download.nvidia.com/compute/cuda/1.1-Beta/x86_website/projects
 
 #### Наивный алгоритм:
 
-05-scan/naive_cuda_scan.cu
+`05-scan/naive_cuda_scan.cu`
 
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/36137274/197419294-80c6c6d7-b656-45d1-b6dc-fff26a300081.png">
 
@@ -480,7 +480,7 @@ nvcc naive_cuda_scan.cu
 
 #### Уберем data-race. По степеням двойки сохраняем элементы:
 
-05-scan/correct_scan.cu
+`05-scan/correct_scan.cu`
 
 Первая стадия:
 
@@ -521,7 +521,7 @@ nvcc correct_scan.cu
 
 #### Решение банк конфликта: Пропускаем каждый 32-й элемент массива
 
-05-scan/scan_bank_conflicts.cu
+`05-scan/scan_bank_conflicts.cu`
 
 Делаем сдвиг, чтобы избежать банк конфликт: 
 
@@ -530,3 +530,16 @@ nvcc correct_scan.cu
  0 | 1 | 2 | 3 |...|31 | - |32 |33 |...|63 | - |64 |
 
  ..tba..
+
+ ### Комментарии к ДЗ
+
+ Условие ДЗ взято из https://gitlab.atp-fivt.org/courses-public/pd/global/-/blob/main/homeworks/task2_cuda.md -- там же лежит подробное описание что надо сделать и за что ставятся оценки. Текст ниже только дополняет условие ДЗ
+ 
+- Сложение двух массивов (функция KernelAdd, файл KernelAdd.cuh, реализация в KernelAdd.cu)
+- Поэлементное перемножение двух массивов (функция KernelMul, файл KernelMul.cuh, реализация в KernelMul.cu)
+- Сложение двух матриц одинакового размера (функция KernelMatrixAdd, файл KernelMatrixAdd.cuh, реализация в KernelMatrixAdd.cu) - матрицы должны быть аллоцированы через механизм двумерных матриц
+- Перемножение матрицу на вектор (функция MatrixVectorMul, файл MatrixVectorMul.cuh, реализация в MatrixVectorMul.cu)
+- Вычисление скалярного произведения двух векторов (функция ScalarMul, файл ScalarMul.cuh, реализация в KernelScalarMul.cu)
+- Вычисление косинуса угла между двумя векторами (на основе функции скалярного произведения)
+- Вычисление произведения двух матриц (функция MatrixMul, файл MatrixMul.cuh, реализация в MatrixMul.cu) через shared memory.
+- Реализация функции Filter, которая оставляет только элементы массива, удовлетворяющие соотношению (для этого необходимо реализовать функцию:
