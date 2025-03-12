@@ -639,8 +639,8 @@ int main(int argc, char** argv) {
 	cudaMalloc(...);
 	cudaMalloc(...);
 	
-	...
-	...
+	сudaMemcpy(...);
+	сudaMemcpy(...);
 	
 	cudaEvent_t start;
 	cudaEvent_t stop;
