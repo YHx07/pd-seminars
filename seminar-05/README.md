@@ -609,9 +609,7 @@ __global__ void KernelAdd(int numElements, float* x, float* y, float* result) {
 
 ```
 #include "KernelAdd.cuh"
-
 #include <iostream>
-#include <cassert>
 
 int main(int argc, char** argv) {
 	
