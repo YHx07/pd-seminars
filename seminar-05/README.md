@@ -613,8 +613,8 @@ __global__ void KernelAdd(int numElements, float* x, float* y, float* result) {
 
 int main(int argc, char** argv) {
 	
-	int SIZE = ;
-	int BLOCK_DIM = ;
+	int SIZE = ...;
+	int BLOCK_DIM = ...;
 	int GRID_DIM = (SIZE + BLOCK_DIM - 1) / BLOCK_DIM;
 	
 	float* h_x = new float[SIZE];
@@ -622,11 +622,11 @@ int main(int argc, char** argv) {
 	float* h_res = new float[SIZE];
 	
 	for (int i = 0; i < SIZE; ++i) {
-		h_x[i] = 2 * i;
+		h_x[i] = ...;
 	}
 	
 	for (int i = 0; i < SIZE; ++i) {
-		h_y[i] = -i;
+		h_y[i] = ...;
 	}
 	
 	float* d_x;
@@ -655,11 +655,6 @@ int main(int argc, char** argv) {
 	cudaEventRecord(stop);
 	
 	cudaMemcpy(h_res, d_res, SIZE * sizeof(float), cudaMemcpyDeviceToHost);
-	  
-	float eps = 0.1;
-	for (int i = 0; i < min(10'000, SIZE); ++i) {
-		assert(h_res[i] >= (h_x[i] + h_y[i]) * (1. - eps) && h_res[i] <= (h_x[i] + h_y[i]) * (1. + eps));
-	}
 	
 	float elapsed = 0;
 	cudaEventElapsedTime(&elapsed, start, stop);
