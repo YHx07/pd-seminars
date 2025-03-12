@@ -567,6 +567,10 @@ __global__ void Filter(float* array, int numElements, OperationFilterType type, 
 
 Шаблон по ссылке: https://gitlab.atp-fivt.org/courses-public/pd/global/-/tree/main/homeworks/templates/task2_cuda
 
+---
+
+Стурктура файлов в шаблоне:
+
 ```md
 ├── src/                      	# Код CUDA, __файлы в этой папке редактируем__
 │   ├── CommonKernels.cu      	# Общие ядра CUDA
@@ -592,7 +596,7 @@ __global__ void Filter(float* array, int numElements, OperationFilterType type, 
 └── .gitlab-ci.yml         	# Конфигурация CI/CD
 ```
 
-#### Пример задачи 1
+#### Пример: задача №1
 
 ##### Функция `KernelAdd.cu`
 
@@ -613,6 +617,7 @@ __global__ void KernelAdd(int numElements, float* x, float* y, float* result) {
  }
 }
 ```
+
 ##### Основная часть программы: `01-add.cu`
 
 ```
@@ -747,4 +752,5 @@ int main(int argc, char** argv) {
 01-add 03-matrix-add 05-scalar-mul 07-matrix-mul 02-mul 04-matrix-vector-mul 06-cosine-vector 08-filter
 ```
 
-Их запускаем примерно следующей командой (зависит от вашей реализации): `./01-add 123 456` (передаем параметры)
+Их запускаем примерно следующей командой (зависит от вашей реализации): `./01-add 123 456` (передаем параметры). Ожидается, что на выходе будет время работы программы. Его и параметры запуска записываем. Далее можно построить график зависимости времени работы от параметров
+
