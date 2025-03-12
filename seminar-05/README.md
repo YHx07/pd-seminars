@@ -584,7 +584,7 @@ __global__ void Filter(float* array, int numElements, OperationFilterType type, 
 ├── runners/                 	# Запускающие скрипты
 │   ├── 01-add.cu      		# Инициализация переменных, перемещение переменных на GPU, применение `KernelAdd.cu` к переменным
 │   ├── 02-mul.cu
-│   ├── ...
+│   └── ...			# Всего 8 задач, поэтому 8 файлов
 ├── file.ipynb     		# Jupyter notebook для визуализации (нужно добавить)
 ├── CMakeLists.txt         	# Конфигурация сборки CMake
 └── .gitlab-ci.yml         	# Конфигурация CI/CD\
