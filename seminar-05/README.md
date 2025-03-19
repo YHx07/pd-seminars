@@ -754,3 +754,6 @@ int main(int argc, char** argv) {
 
 Их запускаем примерно следующей командой (зависит от вашей реализации): `./01-add 123 456` (передаем параметры). Ожидается, что на выходе будет время работы программы. Его и параметры запуска записываем. Далее можно построить график зависимости времени работы от параметров
 
+По поводу pitch в https://gitlab.atp-fivt.org/courses-public/pd/global/-/blob/main/homeworks/templates/task2_cuda/include/KernelMatrixAdd.cuh: 
+
+https://nichijou.co/cudaRandom-memAlign/
