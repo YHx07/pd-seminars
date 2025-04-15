@@ -16,10 +16,10 @@
 | 03 | CUDA Введение | Архитектура GPU, классификация видеокарт NVIDIA, основы CUDA |
 | 04 | CUDA Память | Работа с памятью в CUDA, оптимизация доступа к памяти |
 | 05 | CUDA Оптимизация | Продвинутые техники оптимизации CUDA программ |
-| 06 | Hadoop Основы | Введение в экосистему Hadoop, HDFS |
-| 07 | MapReduce | Принципы MapReduce, написание MapReduce программ |
-| 08 | Hive | Работа с Apache Hive, HiveQL |
-| 09 | Spark Основы | Введение в Apache Spark, RDD |
-| 10 | Spark SQL | Работа с DataFrame и SparkSQL |
-| 11 | Spark ML | Машинное обучение с помощью Spark MLlib |
-| 12 | Spark Streaming | Потоковая обработка данных в Spark |
+| 06 | Hadoop Основы | Экосистема Hadoop, HDFS |
+| 07 | MapReduce - 1 | Принципы MapReduce, написание MapReduce программ на Python с использованием HadoopStreaming |
+| 08 | MapReduce  | Написание MapReduce программ на Java с использованием HadoopStreaming |
+| 09 | Hive - 1 | Работа с Apache Hive, HiveQL |
+| 10 | Hive - 2 |  |
+| 11 | Spark | Введение в Apache Spark, RDD, DataFrame и SparkSQL |
+| 12 | Hbase, NoSQL | |
