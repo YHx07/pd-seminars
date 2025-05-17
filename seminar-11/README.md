@@ -101,7 +101,7 @@ https://cloud.mail.ru/public/1NaG/ujY4mYy2e
 - Итерируемый. Можем делать обход RDD. RDD — ..distributed.., он распределен по нодам кластера. Между частями можем ходить как по списку.
 - Восстанавливаемый. Каждая партиция помнит как она была получена (часть графа вычислений) и при утере может быть восстановлена.
 
-[Статья на DataBricks про Spark RDD](https://www.databricks.com/glossary/what-is-rdd). Материалы Databricks, наверное, один из самых лучших источников про работу на Spark.
+[Статья на DataBricks про Spark RDD](https://www.databricks.com/glossary/what-is-rdd), возможно потребуется VPN. Материалы Databricks, наверное, один из самых лучших источников про работу на Spark.
 
 RDD API состоит из операций двух типов:
 
@@ -160,7 +160,7 @@ spark = SparkSession.builder.config(conf=conf).appName('Name').getOrCreate()
 ```bash
 PYSPARK_DRIVER_PYTHON=jupyter PYSPARK_PYTHON=/usr/bin/python3 PYSPARK_DRIVER_PYTHON_OPTS='notebook --ip="*" --port=<PORT> --no-browser' pyspark2 --master=yarn --num-executors=<N>
 ```
-Spark Context выделяется вместе с поднятием юпитер ноутбука.
+Spark Context выделяется вместе с поднятием юпитер ноутбука. Но для сдачи домашки нам понадобится эта команда в коде.
 
 Про параметры spark context есть отличная статья от Авито: https://habr.com/ru/companies/avito/articles/732870/ .
 
