@@ -18,7 +18,7 @@
 | 05 | CUDA Оптимизация | Продвинутые техники оптимизации CUDA программ |
 | 06 | Hadoop Основы | Экосистема Hadoop, HDFS |
 | 07 | MapReduce - 1 | Принципы MapReduce, написание MapReduce программ на Python с использованием HadoopStreaming |
-| 08 | MapReduce  | Написание MapReduce программ на Java с использованием HadoopStreaming |
+| 08 | MapReduce - 2 | Написание MapReduce программ на Java с использованием HadoopStreaming |
 | 09 | Hive - 1 | Работа с Apache Hive, HiveQL |
 | 10 | Hive - 2 |  |
 | 11 | Spark - 1 | Apache Spark, PySpark, RDD, DataFrame и SparkSQL |
